@@ -1,0 +1,14 @@
+## 결측치 값을 대체하는 문제
+
+```SQL
+SELECT ANIMAL_TYPE, 
+CASE 
+    WHEN NAME IS NOT NULL THEN NAME
+    ELSE 'No name'
+END AS NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
+```
+
+## 해설
+- `IS NOT NULL` 은 결측치가 아닌 값을 의미
