@@ -25,7 +25,7 @@
 
 - David Marr (70년대 후반)
     
-    ![Untitled](Lecture%201%2091fb505eb45548e998dda0adefcb505a/Untitled%201.png)
+    <img width="392" alt="Untitled 1" src="https://user-images.githubusercontent.com/99728502/226164739-ec4833c8-d120-4c28-9544-7cf3caa801f6.png">
     
     - 비전의 정의, 발전 방향, 알고리즘 등을 저술
     - ‘우리가 눈으로 받아들인 이미지’를 ‘최종적인 Full 3D 표현’으로 만들기 위해 거쳐야 하는 과정을 설명
@@ -35,7 +35,7 @@
     
 - 1970년대 : 블록 같은 단순한 것을 넘어 실제 세계를 인식하고 표현하려는 시도
     
-    ![Untitled](Lecture%201%2091fb505eb45548e998dda0adefcb505a/Untitled%202.png)
+    <img width="391" alt="Untitled 2" src="https://user-images.githubusercontent.com/99728502/226164745-48fe604b-700f-490c-bea0-09d791509f0a.png">
     
     - Generalized Cylinder : 원통 모양의 조합
     - Pictorial Structure : 주요 부위와 관절로 표현
@@ -48,7 +48,7 @@
 
 - 객체인식이 너무 어렵다면 객체분할(Segmentation)부터 시작하는 것이 좋지 않을까? (1990)
     
-    ![Untitled](Lecture%201%2091fb505eb45548e998dda0adefcb505a/Untitled%203.png)
+    <img width="400" alt="Untitled 3" src="https://user-images.githubusercontent.com/99728502/226164747-aaa9065f-534b-4225-b63a-d606054eaae5.png">
     
     - 객체분할 : 이미지의 각 픽셀을 의미있는 방향으로 군집화하는 방법
     - 군집화된 이미지로 정확하게 사람을 인식할 수는 없겠지만, 적어도 배경인 픽셀과 사람인 픽셀을 구별할 수는 있음
@@ -60,7 +60,7 @@
 
 - 어떻게 객체를 잘 인식할 것인가?
     
-    ![Untitled](Lecture%201%2091fb505eb45548e998dda0adefcb505a/Untitled%204.png)
+    <img width="389" alt="Untitled 4" src="https://user-images.githubusercontent.com/99728502/226164748-fa66cbbc-3f27-4536-a206-c0fc88e9f82a.png">
     
     - 90~10년도엔 ‘특징기반 객체인식 알고리즘’이 중시
         - 카메라 앵글, 빛, 화각 등의 문제로 같은 객체도 변할 수 있음
