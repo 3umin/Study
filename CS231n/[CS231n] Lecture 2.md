@@ -27,8 +27,9 @@
         - 종속변수 값을 예측하는 데에 어떤 변수가 중요한지 알면 L1, 모르면 L2 (L1은 중요하지 않은 변수값을 0으로 처리할 수 있기 때문)
         - 요소들간의 실질적인 의미를 잘 모르는 경우라면 L2가 더 나을 수 있다.
     - 하지만 이 방법은 Test time에 N개의 데이터와 인풋이미지를 모두 비교해야하기 때문에, 너무 느림
-        
-        ![Untitled](Lecture%202%207792e654b2834fb8ae507a63e407c4f1/Untitled.png)
+    
+    
+        <img width="535" alt="Untitled" src="https://user-images.githubusercontent.com/99728502/226164907-fadad8f9-0b75-40f9-ba88-54dc18312229.png">
         
     - 그래서 NN을 좀 더 일반화시킨 위와 같은 KNN 방법이 사용
         - 가까운 이웃을 K개 만큼 찾고, K개의 포인트에서 투표를 하여 가장 많은 득표를 얻은 클래스로 분류
@@ -40,7 +41,7 @@
         3. 가장 효과적인 방법은 데이터를 Train/Val/Test로 나누어 validation set으로 검증을 해 최적의 성능을 가진 모델을 정한 뒤 Test 셋으로 단 한 번만 예측을 진행해 성능을 기록
         4. 또 다른 방법은 Cross-Validation. validation 셋을 계속 바꿔가며 검증
         
-        ![Untitled](Lecture%202%207792e654b2834fb8ae507a63e407c4f1/Untitled%201.png)
+        <img width="487" alt="Untitled 1" src="https://user-images.githubusercontent.com/99728502/226164920-84b7ddd0-eda6-4f3c-87a4-1b21da131ad6.png">
         
         - 이 방법이 거의 표준이긴 하지만 딥러닝 같은 큰 모델을 학습시킬 때는 연산량이 많기 때문에 잘 사용하지 않음
     - 하지만 KNN은 이미지에서 잘 사용되지 않음
@@ -52,7 +53,7 @@
     - parametric model의 가장 단순한 형태
     - KNN에서는 parameter가 없었지만, 여기선 weights라고 불리는 파라미터가 존재
         
-        ![Untitled](Lecture%202%207792e654b2834fb8ae507a63e407c4f1/Untitled%202.png)
+      <img width="514" alt="Untitled 2" src="https://user-images.githubusercontent.com/99728502/226164933-8e5d5bc1-a345-4e96-874b-9166b605fb9a.png">
         
     - 32x32x3 사이즈의 이미지를 1차원으로 쭉 펴서 3072x1 사이즈의 x로 변환해 사용
     - 결과는 각 클래스의 확률을 계산(10개)해야 하므로, 그에 맞게 가중치 행렬과 편향 벡터의 사이즈도 정해짐
@@ -61,5 +62,4 @@
         - 템플릿은 평균을 통해 만들기 때문에 비교하기에 부적합하다.
     - 이미지를 고차원 속의 한 점이라고 생각한다면, Linear Classifier은 각 클래스를 구분시켜주는 선형 결정경계를 그려주는 역할을 수행할 수 있음
     - 하지만 이 경우에는 이 Linear Classifier을 망칠 수 있는 경우가 많음(아래의 경우)
-        
-        ![Untitled](Lecture%202%207792e654b2834fb8ae507a63e407c4f1/Untitled%203.png)
+       <img width="525" alt="Untitled 3" src="https://user-images.githubusercontent.com/99728502/226164942-8826a0f7-e52c-48f3-9e85-a7dfd1cba464.png">
