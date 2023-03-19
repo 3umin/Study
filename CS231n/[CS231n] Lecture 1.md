@@ -15,7 +15,7 @@
     - 고양이 두뇌 뒷면에 전극을 꽂아 어떤 자극을 주어야 뉴런들이 반응하는지를 관찰
     - 시각처리는 처음에는 단순한 구조로 시작되어 그 정보가 통로를 거치면서 점점 더 복잡해짐
     
-    ![Untitled](Lecture%201%2091fb505eb45548e998dda0adefcb505a/Untitled.png)
+    <img width="505" alt="Untitled" src="https://user-images.githubusercontent.com/99728502/226164727-8c78e1d2-f8cf-4bec-87a5-67e46681b6c7.png">
     
 - 컴퓨터 비전은 60년대 초반에 태동
 - 1966년 MIT 프로젝트
