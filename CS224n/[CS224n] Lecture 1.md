@@ -68,7 +68,7 @@
 - 텍스트 내 각각의 위치 t를 지나면서 중심단어 c와 문맥단어 o를 갖는다.
 - c와 o의 워드벡터간 유사성을 활용해 c가 주어졌을 때의 o의 확률을 계산
 - 이 확률을 최대화하는 벡터를 조정
-- 
+
 ![캡처7](https://user-images.githubusercontent.com/99728502/226260569-1d59e47c-360c-4f4a-b8bb-89e03c4822f3.png)
 
 ![캡처8](https://user-images.githubusercontent.com/99728502/226260575-f11723dd-742f-452a-8a7e-4d1b143d5574.png)
