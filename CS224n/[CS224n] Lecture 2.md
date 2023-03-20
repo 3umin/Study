@@ -18,7 +18,7 @@ CBOW는 중심 단어를 예측하기 위해 나이브 베이즈 모델처럼 �
 
 - Gradient Descent
 
-![img1.png](%5BCS224n%5D%20Lecture%202%209e44ac83c1c64daeb482e7ea9317803f/img1.png)
+![img1](https://user-images.githubusercontent.com/99728502/226261587-bc7a1816-77d3-4f88-a4e4-87d103997b1a.png)
 
 손실함수의 gradient(기울기)를 계산한뒤, 기울기의 반대방향으로 조금씩 이동 
 
@@ -44,7 +44,7 @@ $\nabla_\theta J(\theta)$ : 손실함수의 기울기, 전체 parameter에 대�
 
 SG(Skip-Grams)가 풀던 다중 클래스 분류 문제를 이진 로지스틱 회귀로 바꾼 것
 
-![cs224n.PNG](%5BCS224n%5D%20Lecture%202%209e44ac83c1c64daeb482e7ea9317803f/cs224n.png)
+![cs224n](https://user-images.githubusercontent.com/99728502/226261627-d1dccafe-0206-4646-ae51-76cf427a7337.png)
 
 $-\log\sigma(u_0^Tv_c)$ : 주변 단어(U0)와 중심단어(Vc)의 내적 + sigmoid + log ⇒ 가능한 크게 유지
 
@@ -55,7 +55,7 @@ $\sum_k \log\sigma(-u_k^Tv_c)$ : 랜덤으로 선택된 k개의 주변단어와 
 - Window based matrix : 한 윈도우를 기준으로 빈도 체크, 단어간 유사도 찾기 수월
 - Word-document matrtix : 한 문서를 기준으로 빈도 체크, 문서의 전반적인 주제 찾기 수월
 
-![cs224n1.png](%5BCS224n%5D%20Lecture%202%209e44ac83c1c64daeb482e7ea9317803f/cs224n1.png)
+![cs224n1](https://user-images.githubusercontent.com/99728502/226261655-ebbae1db-2e13-4ec2-b850-97868e54625a.png)
 
 - Window based co-occurrence matrix(동시등장 행렬)
 
@@ -85,16 +85,17 @@ $\sum_k \log\sigma(-u_k^Tv_c)$ : 랜덤으로 선택된 k개의 주변단어와 
         
     - 임베딩된 단어벡터간 유사도 측정을 수월하게(Word2Vec)
     - Corpus 전체의 통계정보를 반영(co-occurrence matrix)
-
-![cs224n2.png](%5BCS224n%5D%20Lecture%202%209e44ac83c1c64daeb482e7ea9317803f/cs224n2.png)
+   
+![cs224n2](https://user-images.githubusercontent.com/99728502/226261680-c699bda5-806f-407d-bd46-522e12f96cb4.png)
 
  동시등장 행렬을 바탕으로 계산,
 
  두 단어(ice, steam)과 모두 관련이 있는 단어나 모두 관련이 없는 단어는 값이 1에 가깝고, 
 
  한 단어만 관련이 있을 경우 1에서 멀어짐
+ 
+![cs224n3](https://user-images.githubusercontent.com/99728502/226261697-dc657b88-fdbf-4c37-8e7d-9536de67c0ee.png)
 
-![cs224n3.PNG](%5BCS224n%5D%20Lecture%202%209e44ac83c1c64daeb482e7ea9317803f/cs224n3.png)
 
 임베딩된 두 단어벡터의 내적이 corpus 전체에서 단어가 동시등장하는 확률의 로그값이 되도록 정의
 
@@ -108,7 +109,8 @@ $f(X_{ij}) = ({x \over x_{max}})^\alpha$ 로 정의해주어 f가 0~1의 값으�
 
 유사한 관계에 있는 단어들끼리 비슷한 Linear 속성을 갖게된다
 
-![cs224n5.png](%5BCS224n%5D%20Lecture%202%209e44ac83c1c64daeb482e7ea9317803f/cs224n5.png)
+![cs224n5](https://user-images.githubusercontent.com/99728502/226261719-f896e34d-e41d-4881-9718-b79407fd147c.png)
+
 
 ## Word embedding을 평가하는 방법
 
@@ -119,7 +121,8 @@ $f(X_{ij}) = ({x \over x_{max}})^\alpha$ 로 정의해주어 f가 0~1의 값으�
         
         Ex) correlation 평가(10점 만점)
         
-        ![cs224n6.PNG](%5BCS224n%5D%20Lecture%202%209e44ac83c1c64daeb482e7ea9317803f/cs224n6.png)
+        ![cs224n6](https://user-images.githubusercontent.com/99728502/226261734-11bc409b-6faa-49be-9845-a670c9e47cd2.png)
+
         
 
 1. 외적(extrinsic) 평가
