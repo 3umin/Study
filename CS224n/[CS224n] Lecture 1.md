@@ -27,7 +27,7 @@
 
 ## 전통적인 NLP
 
-![캡처3.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/%EC%BA%A1%EC%B2%983.png)
+![캡처3](https://user-images.githubusercontent.com/99728502/226260322-29c5ca64-25a2-4004-a98b-bff838b19c43.png)
 
 **One-hot-vector** : 각 단어별로 위치를 지정해 해당 단어의 위치에만 1을 채워 표현
 
@@ -41,7 +41,7 @@
 
 ## 현대의 NLP
 
-![cs244n.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/cs244n.png)
+![cs244n](https://user-images.githubusercontent.com/99728502/226260357-17927e71-1322-489b-b918-c1df7610bde6.png)
 
 **분산의미론**(Distributional Semantics): 단어의 의미를 단어 주변에 자주 나타나는 단어로 파악
 
@@ -54,24 +54,24 @@
 
 보통 워드벡터의 차원은 50에서 300사이정도인데, 여기선 간단하게 9차원으로 나타냄
 
-![캡처4.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/%EC%BA%A1%EC%B2%984.png)
+![캡처4](https://user-images.githubusercontent.com/99728502/226260516-ef0fe018-0e41-464b-a397-020e3513ee96.png)
 
-![캡처5.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/%EC%BA%A1%EC%B2%985.png)
+![캡처5](https://user-images.githubusercontent.com/99728502/226260521-479621d2-c65e-4605-86d2-c435e2c97dc8.png)
 
 우측 이미지는 100차원의 벡터를 2차원으로 압축해 표현한 것으로, 단어간 간격이 가까울수록 유사한 문맥에서 나타난다.
 
 ## Word2vec 알고리즘
 
-![캡처6.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/%EC%BA%A1%EC%B2%986.png)
+![캡처6](https://user-images.githubusercontent.com/99728502/226260550-d91fcecb-39aa-4a79-8ab1-5b0728809517.png)
 
 - 모든 단어들은 벡터로 표현됨
 - 텍스트 내 각각의 위치 t를 지나면서 중심단어 c와 문맥단어 o를 갖는다.
 - c와 o의 워드벡터간 유사성을 활용해 c가 주어졌을 때의 o의 확률을 계산
 - 이 확률을 최대화하는 벡터를 조정
+- 
+![캡처7](https://user-images.githubusercontent.com/99728502/226260569-1d59e47c-360c-4f4a-b8bb-89e03c4822f3.png)
 
-![캡처7.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/%EC%BA%A1%EC%B2%987.png)
-
-![캡처8.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/%EC%BA%A1%EC%B2%988.png)
+![캡처8](https://user-images.githubusercontent.com/99728502/226260575-f11723dd-742f-452a-8a7e-4d1b143d5574.png)
 
 - L(θ), likelihood : 모든 단어(t)에 대해 fixed size window(m)의 단어만큼 o가 나올 확률의 곱
 - **J(θ), 목적함수(손실함수)** : negative log likelihood 형태, 이를 최소화하는 θ의 값을 구함
@@ -86,9 +86,9 @@
 - $\nu_w:$ **w가 center word(중심단어)일 때**
 - $**u_w:$ w가 context word(주변단어)일 때**
 
-![캡처9.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/%EC%BA%A1%EC%B2%989.png)
+![캡처9](https://user-images.githubusercontent.com/99728502/226260590-a23ed1a7-de91-4676-b065-025f75f8ed51.png)
 
-![캡처10.PNG](%5BCS224n%5D%20Lecture%201%20b172dcce8be043c4b26f93c6c8e07fcd/%EC%BA%A1%EC%B2%9810.png)
+![캡처10](https://user-images.githubusercontent.com/99728502/226260599-4751444e-4462-4617-a460-ecbd42b12171.png)
 
 1. 내적을 통해 o와 c의 유사도를 비교
 2. 양수로 만들기 위해 exponentiation을 진행
