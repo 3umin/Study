@@ -5,7 +5,7 @@
 - 손실함수란? 
 W를 입력으로 받아서 각 스코어를 확인하고 W가 얼마나 효과적인지를 계산해주는 함수
     
-    ![Untitled](Lecture%203%20a272fafdef054176936e3599e5715441/Untitled.png)
+    <img width="419" alt="Untitled" src="https://user-images.githubusercontent.com/99728502/226259404-80d47687-2376-49ee-8baf-5097f2e0ae9e.png">
     
 - 손실함수 : $L = {1 \over N} \sum L_i(f(x_i, W), y_i)$ 로 정의
 - W의 공간을 탐색하면서 L을 최소화하는 적합한 W를 찾는 방식으로 학습
@@ -31,7 +31,8 @@ W를 입력으로 받아서 각 스코어를 확인하고 W가 얼마나 효과�
 
 ### Softmax(Cross-Entropy Loss)
 
-![Untitled](Lecture%203%20a272fafdef054176936e3599e5715441/Untitled%201.png)
+<img width="398" alt="Untitled 1" src="https://user-images.githubusercontent.com/99728502/226259463-c9a58930-d2f4-4563-b8a4-f1eaca5f6840.png">
+
 
 - $P(Y= k|X=X_i) = {e^sk \over \sum_j e^sj}, \ s = f(x_i;W)$
 - $L_i = -logP(Y=y_i|X=x_i)$
@@ -44,9 +45,9 @@ W를 입력으로 받아서 각 스코어를 확인하고 W가 얼마나 효과�
 # Regularization(규제)
 
 - Loss 함수를 통해 데이터에 fitting 시키게 된다면, 새로운 데이터엔 적합하지 않을 확률이 높음 → Regularization 항을 추가
-    
-    ![Untitled](Lecture%203%20a272fafdef054176936e3599e5715441/Untitled%202.png)
-    
+
+    <img width="312" alt="Untitled 2" src="https://user-images.githubusercontent.com/99728502/226259500-08681004-b95c-4dde-aca0-4738ee5533c5.png">
+
 - 오컴의 면도날 이론 : 비등한 가설들중엔 단순한 것이 최고
 - 이를 위해 Regularization Penalty를 추가
     - 모델이 훈련셋에 완벽히 Fit하지 못하도록 모델의 복잡도에 패널티를 부여하는 방법
@@ -66,8 +67,8 @@ W를 입력으로 받아서 각 스코어를 확인하고 W가 얼마나 효과�
 1. Random search(bad)
     - 임의로 샘플링한 W들을 모아놓고 loss를 계산하여 가장 좋은 것을 선택
 2. Follow the slope
-    
-    ![Untitled](Lecture%203%20a272fafdef054176936e3599e5715441/Untitled%203.png)
+
+    <img width="398" alt="Untitled 3" src="https://user-images.githubusercontent.com/99728502/226259538-df390665-db49-4359-8da0-feef64bfb1fd.png">
     
     - 경사를 확인한 뒤 경사에 맞게 따라감
     - 특정 지점에서 미분을 통해 경사를 계산
@@ -95,16 +96,17 @@ W를 입력으로 받아서 각 스코어를 확인하고 W가 얼마나 효과�
 - 특징 변환을 통해 이미지를 원본보다 훨씬 쉽게 구분할 수 있음
     - Color Histogram
         
-        ![Untitled](Lecture%203%20a272fafdef054176936e3599e5715441/Untitled%204.png)
-        
+        <img width="371" alt="Untitled 4" src="https://user-images.githubusercontent.com/99728502/226259556-1628c8c1-1649-40dc-a36b-f53ed7cf9855.png">
+
     - Histogram of Oriented Gradients
-        
-        ![Untitled](Lecture%203%20a272fafdef054176936e3599e5715441/Untitled%205.png)
+    
+        <img width="373" alt="Untitled 5" src="https://user-images.githubusercontent.com/99728502/226259567-ef6c26fa-470b-4500-a56a-3d16a9d497f6.png">
+
         
         - 이미지내에 전반적으로 어떠한 Edge 정보가 있는지를 보여줌
     - Bag of Words(BOW)
-        
-        ![Untitled](Lecture%203%20a272fafdef054176936e3599e5715441/Untitled%206.png)
+    
+        <img width="401" alt="Untitled 6" src="https://user-images.githubusercontent.com/99728502/226259580-7525dd88-a470-44a8-b59d-073268f8ca93.png">
         
         - NLP에서 따온 개념
         - 시각단어 : 이미지를 임의로 조각낸 후, K-means와 같은 알고리즘으로 조각들을 군집
