@@ -2,7 +2,7 @@
 
 # Neural Dependency Parsing
 
-![5-1.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-1.png)
+<img width="439" alt="5-1" src="https://user-images.githubusercontent.com/99728502/226567889-669a7023-11f3-4a26-af51-e80c2f98b79d.png">
 
 - 인공신경망을 활용해 Parsing을 하는 방법
 - 각각의 단어를 d 차원의 벡터로 표현
@@ -13,7 +13,7 @@
 
 전통적인 머신러닝 분류기는 그렇게 효과가 뛰어나지 않음 - **선형성**을 기반으로 영역을 나눔
 
-![5-2.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-2.png)
+<img width="328" alt="5-2" src="https://user-images.githubusercontent.com/99728502/226567967-da39369b-05f7-4f55-a663-961bb1d14f6b.png">
 
                                         (기존의 머신러닝)                               (딥러닝)
 
@@ -24,7 +24,7 @@
 
 ## Simple feed-forward Neural Network Multi-Class Classifier
 
-![5-3.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-3.png)
+<img width="419" alt="5-3" src="https://user-images.githubusercontent.com/99728502/226568002-7feea73d-6d46-4393-a2bb-29254af8b37d.png">
 
 - 로그 손실함수는 이전과 같이 역전파 되어 input 값을 계산하는 용으로 사용
 
@@ -32,16 +32,16 @@
 
 ### Graph-Based Dependency Parser
 
-![5-4.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-4.png)
+<img width="335" alt="5-4" src="https://user-images.githubusercontent.com/99728502/226568024-1d07f01e-0e10-445c-8b98-7332aeab4ef0.png">
 
 - 각각의 단어에 대해 모든 가능한 Dependency의 점수를 계산
 - 최근엔 Graph-Based Parser와 Neural Network가 결합된 **Neural Graph-Based Parser** 활용
 
 # A bit more about Neural Networks
 
-![5-5.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-5.png)
+<img width="485" alt="5-5" src="https://user-images.githubusercontent.com/99728502/226568041-19958630-488c-4703-aa48-96b5d9609ad8.png">
 
-![5-6.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-6.png)
+<img width="245" alt="5-6" src="https://user-images.githubusercontent.com/99728502/226568057-735b8626-5478-49c3-be98-c1e1483b5154.png">
 
 - 과거: 손실함수에 대해 Regularization → 과대적합(Overfitting) 방지
 - 현재: Regularization은 ‘Big’ model에 대해 시행했을 때 잘 이루어짐
@@ -61,7 +61,7 @@
 
 ## Non-Linearities, Old and New
 
-![5-7.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-7.png)
+<img width="499" alt="5-7" src="https://user-images.githubusercontent.com/99728502/226568087-2a772e7d-598f-4e86-b466-4514d0ac184e.png">
 
 - 과거
     - 가장 Classic한건 Logistic(sigmoid)
@@ -87,22 +87,23 @@
 
 # Language Modeling
 
-![5-8.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-8.png)
+<img width="370" alt="5-8" src="https://user-images.githubusercontent.com/99728502/226568122-91777412-0e05-4ba1-9699-eebd49f2bc0e.png">
 
 - 다음 단어로 무엇이 올 지 예측하는 것
 - $P(x^{(t+1)} | x^{(t)}, ... \ ,x^{(1)})$ 의 계산을 통해 예측
 
 ## Assigns Probability to a Piece of Text
 
-![5-9.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-9.png)
+<img width="331" alt="5-9" src="https://user-images.githubusercontent.com/99728502/226568151-97350ea2-5427-4510-ba0d-136a461b31df.png">
 
 다음 단어를 추천해주는 것이 가장 흔한 예시(구글 검색엔진에서 자동완성도 포함)
 
 ## N-Gram Language Models
 
-![5-10.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-10.png)
+<img width="411" alt="5-10" src="https://user-images.githubusercontent.com/99728502/226568178-1f52b0f8-edf0-4c96-8140-51e7569815cc.png">
 
-![5-11.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-11.png)
+<img width="541" alt="5-11" src="https://user-images.githubusercontent.com/99728502/226568199-3f7aca07-b9f9-4f7d-bfe2-c76b7cd3aa2c.png">
+
 
 - 서로 다른 n-gram의 빈도에 대한 통계를 수집해서 다음 단어를 예측
 - 전제 : $x^{(t+1)}$는 앞서 있는 n-1개의 단어들에만 영향을 받음
@@ -110,7 +111,7 @@
 
 Ex) Suppose 4-gram language model
 
-![5-12.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-12.png)
+<img width="437" alt="5-12" src="https://user-images.githubusercontent.com/99728502/226568222-085202e9-139e-481b-832b-9f0faf3d1f5f.png">
 
 예를 들어,
 
@@ -150,7 +151,7 @@ Ex) Suppose 4-gram language model
 
 - Fixed-window Neural Language Model
 
-![5-13.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-13.png)
+<img width="488" alt="5-13" src="https://user-images.githubusercontent.com/99728502/226568255-015c13df-6f76-4136-abd5-0fc6a86e4a7a.png">
 
 - n-gram 모델의 고질적인 문제를 해결하기 위해 등장
 - 3강에서 다루었던 NER의 window-based neural model을 기반으로 진행
@@ -172,7 +173,7 @@ Ex) Suppose 4-gram language model
 
 # Recurrent Neural Networks(RNN)
 
-![5-14.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-14.png)
+<img width="430" alt="5-14" src="https://user-images.githubusercontent.com/99728502/226568280-feb416e7-d54c-4aaa-82b5-f39153aded98.png">
 
 - Hidden layer(Hidden states)가 존재
 - 첫번째 단어로부터 hidden states를 계산하고, 두번째 단어를 예측할 때 두번째 단어 뿐 아니라, 첫번째 단어로부터 계산한 hidden states값도 영향을 줌
@@ -182,7 +183,7 @@ Ex) Suppose 4-gram language model
 
 ## Simple RNN language model
 
-![5-15.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-15.png)
+<img width="412" alt="5-15" src="https://user-images.githubusercontent.com/99728502/226568314-da2f26e1-e578-402d-8e6c-0a3257cc33b7.png">
 
 - 장점
     1. 이론상으로는 input length에 상관없이 다음 단어를 예측할 수 있음
