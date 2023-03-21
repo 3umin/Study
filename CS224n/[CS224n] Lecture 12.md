@@ -7,7 +7,7 @@
     
     <img width="519" alt="1" src="https://user-images.githubusercontent.com/99728502/226583260-e893a0b9-fefc-4a37-9317-2b36fb1bf1e4.png">
 
-    $S = f(y_{<t}, \theta)$ 로 점수 측정
+    $S = f(y_{<t}, \theta)$  로 점수 측정
     
     $L = -\sum_{t=1}^TlogP(y_t^*|{y^*}_{<t})$ negative loglikelihood를 minimize하며 훈련
     
