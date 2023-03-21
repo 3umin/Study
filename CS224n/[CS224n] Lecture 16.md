@@ -39,9 +39,9 @@
 - 잘못된 분류에 따른 사회적인 문제도 발생할 수 있음
     - 개와 쿠키를 잘못 분류한 것은 웃고 넘어갈 수 있지만, 사람과 개를 잘못 분류한다면?
 
-![1.PNG](%5BCS224n%5D%20Lecture%2016%205afefded91ec4184a32ee8ee0e0916e9/1.png)
+![1](https://user-images.githubusercontent.com/99728502/226591691-2e19b88e-629b-418a-8309-b558b71c90c0.png)
 
-![2.PNG](%5BCS224n%5D%20Lecture%2016%205afefded91ec4184a32ee8ee0e0916e9/2.png)
+![2](https://user-images.githubusercontent.com/99728502/226591719-3721996d-842f-4174-84d9-e1d6b8ec754a.png)
 
 ### AI system을 만들 때 고려해야 할 사항
 
@@ -72,7 +72,7 @@
 
 - Implicit bias(암묵적 편향)
 
-![3.PNG](%5BCS224n%5D%20Lecture%2016%205afefded91ec4184a32ee8ee0e0916e9/3.png)
+![3](https://user-images.githubusercontent.com/99728502/226591748-d1b59570-3106-4513-bf29-648dc64ba588.png)
 
 - 우리의 뇌는 두 부분으로 나뉨
     - System 1 : make decision without thinking
@@ -107,19 +107,19 @@
 - 이러한 문제점은 이미지 검색에서도 나타남
     - 구글에 ‘three black/white teenager’을 검색했을 때
     
-    ![4.PNG](%5BCS224n%5D%20Lecture%2016%205afefded91ec4184a32ee8ee0e0916e9/4.png)
-    
-    ![5.PNG](%5BCS224n%5D%20Lecture%2016%205afefded91ec4184a32ee8ee0e0916e9/5.png)
-    
+    ![4](https://user-images.githubusercontent.com/99728502/226591833-ada6a5ac-7cc0-4f87-a2e3-656acb47a1ad.png)
+
+    ![5](https://user-images.githubusercontent.com/99728502/226591850-bcb5372e-6ef2-48f9-a971-d2791c2aa89d.png)
+
     - ‘Doctor’을 검색했을 때 남자 위주, ‘Nurse’를 검색했을 때 여자 위주로 나옴
 - Bias in Machine Translation
     
-    ![6.PNG](%5BCS224n%5D%20Lecture%2016%205afefded91ec4184a32ee8ee0e0916e9/6.png)
-    
+    ![6](https://user-images.githubusercontent.com/99728502/226591875-b816339f-3120-471f-a96a-13fff843b334.png)
+
     - 원어는 성별에 대한 언급이 전혀 없는 상태임
     
-    ![7.PNG](%5BCS224n%5D%20Lecture%2016%205afefded91ec4184a32ee8ee0e0916e9/7.png)
-    
+    ![7](https://user-images.githubusercontent.com/99728502/226591895-d023129c-4bdc-43fe-9263-912e7269fb8b.png)
+
     - 현재는 개선된 상태
 - Bias in dialogue systems
     - 사용자와의 대화로부터 추가적인 학습을 하는 AI 챗봇의 경우 차별적인 언행을 배운 사례가 많음(Tay, 이루다 등)
