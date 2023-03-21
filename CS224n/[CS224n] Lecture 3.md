@@ -8,7 +8,7 @@
 
 **분류기**를 실행해 각 고유명사를 인명(PER), 지명(LOC), 날짜(DATE) 등으로 분류
 
-![3-2.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-2.png)
+![3-2](https://user-images.githubusercontent.com/99728502/226566549-dbbcd149-5f24-4c6b-8984-18a8dff38ccd.png)
 
 - 한계점
     1. 고유명사의 경계(Entity)를 정하기가 어려움
@@ -21,7 +21,7 @@
 
 ex : Not all [museumns in **Paris** are amazing] / window : [ ], 중심단어 : Paris
 
-![3-1.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-1.png)
+![3-1](https://user-images.githubusercontent.com/99728502/226566575-fc72e87e-8320-4221-8fd6-06c606872e99.png)
 
 Window 길이를 2로 설정하여 Paris에서 앞뒤로 2개씩 총 5개의 word vectors를 합쳐서 5d 크기의 벡터 형성
 
@@ -33,13 +33,14 @@ Window 길이를 2로 설정하여 Paris에서 앞뒤로 2개씩 총 5개의 wor
 
 - **Jacobian Matrix**
 
-![3-3.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-3.png)
+![3-3](https://user-images.githubusercontent.com/99728502/226566602-ae118e18-d5b6-4d71-8a53-59ff17990ed2.png)
 
-![3-4.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-4.png)
+![3-4](https://user-images.githubusercontent.com/99728502/226566609-660511bc-4cfe-431a-a829-bd8258f0f854.png)
+
 
 - **Chain Rule**
 
-![3-20.png](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-20.png)
+![3-20](https://user-images.githubusercontent.com/99728502/226566637-dcbc9285-e310-4244-9a5a-954ff3acda6a.png)
 
 z의 함수인 h를 z에 대해 미분하는 방법
 
@@ -48,29 +49,28 @@ z의 함수인 h를 z에 대해 미분하는 방법
     
     h안에 들어가는 식 Wx + b = z로 치환
     
+![3-7](https://user-images.githubusercontent.com/99728502/226566675-88efb2cd-125e-4132-bf39-f6a869b0442f.png)
 
-![3-7.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-7.png)
-
-![3-8.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-8.png)
+![3-8](https://user-images.githubusercontent.com/99728502/226566701-2c51bc33-8e91-44fb-9ec1-c07298797ab9.png)
 
 1. Chain Rule 적용
 
-![3-12.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-12.png)
+![3-12](https://user-images.githubusercontent.com/99728502/226566722-65de15b3-91d1-442b-b76c-61ab58107d8e.png)
 
 1. Jacobian 활용
     
     여태까지 계산한 내용을 대입
-    
+   
+![3-9](https://user-images.githubusercontent.com/99728502/226566746-faa20a17-3955-4a96-888f-88adf0ebd620.png)
 
-![3-9.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-9.png)
+![3-10](https://user-images.githubusercontent.com/99728502/226566783-b18001a6-9e8e-462d-a74c-9fb4497ead0b.png)
 
-![3-10.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-10.png)
 
 1. 다른 변수에 대해 다시 계산 실시
 
-![3-11.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-11.png)
+![3-11](https://user-images.githubusercontent.com/99728502/226566807-475a1aee-48c4-4a71-92d6-12e569920a75.png)
 
-![3-14.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-14.png)
+![3-14](https://user-images.githubusercontent.com/99728502/226566836-6900772b-e309-4036-99bf-7c31ce16f772.png)
 
 $\delta :$ 오류 신호
 
@@ -84,7 +84,8 @@ Forward progation: 4개의 다른 인풋과 아웃풋을 계산하는것(검은�
 
 4개의 다른 input과 output을 순서대로 계산하는 것(아래 이미지에서 검은색부분)
 
-![3-16.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-16.png)
+![3-16](https://user-images.githubusercontent.com/99728502/226566859-fcb9b0fb-881a-4262-902e-c2031035a797.png)
+
 
 ## BackProgation(역전파)
 
@@ -96,17 +97,17 @@ output 벡터를 weight matrix에 대해 미분한 뒤 output 결과로부터 in
 
 - Single Input
 
-![3-17.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-17.png)
+![3-17](https://user-images.githubusercontent.com/99728502/226566876-1ccad6cb-8d9f-455c-94cf-2f36d2cbd422.png)
 
 - Multiple Input
 
-![3-18.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-18.png)
+![3-18](https://user-images.githubusercontent.com/99728502/226566897-3c91f10a-81e5-4791-a0ef-d2eb24b90c50.png)
 
 ## Computation Graph
 
 값을 그래프 노드 위에 위치시켜 그래프 기반 연산 → 효율적
 
-![3-19.PNG](%5BCS224n%5D%20Lecture%203%20cceb72d7ec0b4a4d807505daacf69869/3-19.png)
+![3-19](https://user-images.githubusercontent.com/99728502/226566931-448c36a7-50f9-44ce-ba75-775e180eb658.png)
 
 ### Forward : Topological sort로 정렬한 뒤 노드를 지나감
 
