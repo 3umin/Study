@@ -1,0 +1,194 @@
+# [CS224n] Lecture 5
+
+# Neural Dependency Parsing
+
+![5-1.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-1.png)
+
+- 인공신경망을 활용해 Parsing을 하는 방법
+- 각각의 단어를 d 차원의 벡터로 표현
+- 비슷한 단어들은 벡터간의 거리가 가깝게 표현됨
+- word vector 이외에도, **Part-Of-Speech tags(POS)**와 **Dependency labels** 또한 d 차원의 벡터
+
+## 딥러닝 분류기: 비선형 분류기
+
+전통적인 머신러닝 분류기는 그렇게 효과가 뛰어나지 않음 - **선형성**을 기반으로 영역을 나눔
+
+![5-2.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-2.png)
+
+                                        (기존의 머신러닝)                               (딥러닝)
+
+- 신경망은 비선형 관계를 나타낼 수 있음
+- 분류 결정은 softmax에 의해 선형적으로 결정되지만, 원본 데이터에선 비선형으로 나타남
+
+# Neural dependency parser model architecture
+
+## Simple feed-forward Neural Network Multi-Class Classifier
+
+![5-3.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-3.png)
+
+- 로그 손실함수는 이전과 같이 역전파 되어 input 값을 계산하는 용으로 사용
+
+## Trasition-Based Parser의 대안
+
+### Graph-Based Dependency Parser
+
+![5-4.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-4.png)
+
+- 각각의 단어에 대해 모든 가능한 Dependency의 점수를 계산
+- 최근엔 Graph-Based Parser와 Neural Network가 결합된 **Neural Graph-Based Parser** 활용
+
+# A bit more about Neural Networks
+
+![5-5.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-5.png)
+
+![5-6.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-6.png)
+
+- 과거: 손실함수에 대해 Regularization → 과대적합(Overfitting) 방지
+- 현재: Regularization은 ‘Big’ model에 대해 시행했을 때 잘 이루어짐
+    
+             훈련셋에 대해 과대적합이 심하게 진행되었더라도, 신경쓰지 않는다
+    
+        Big Neural Net은 항상 훈련셋에 과대적합되어 있기 때문
+    
+
+## Dropout 테크닉
+
+- Feature 사이에 동시적응(co-adaptation)을 방지하기 위해 사용
+- 훈련의 각 인스턴스 혹은 각 배치를 할 때, 모델에 있는 각각의 neuron에서 인풋값의 절반을 제거
+
+- 신경망 모델에 대해 Regularizton을 하는 가장 좋은 방법으로 여겨졌음
+- 현재는 일부 특성은 더 강하게 Regularize되고, 일부는 아니게 되는 Feature-dependent로 여겨짐
+
+## Non-Linearities, Old and New
+
+![5-7.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-7.png)
+
+- 과거
+    - 가장 Classic한건 Logistic(sigmoid)
+    - Logistic의 단점은 항상 0~1사이 양수 공간에서만 움직임 → tanh 사용
+    - 여전히 많은 곳에서 Logistic과 tanh는 쓰이지만, 더이상 딥러닝 기법의 디폴트가 아니게 됨
+
+- 현재
+    - hard tanh → 일정 범위를 넘어가면 값이 항상 동일해서 정보를 얻을 수 없을 것처럼 보이지만, 경험적으로 이러한 모델이 매우 유용했음
+    - 그리고 가장 최근에 가장 성공적이고 비선형쪽에서 가장 널리 활용되는 것이 ReLU
+        - 가장 간단한 비선형관계 → 빠른 훈련 가능 및 역전파하기 수월해서 좋은 효과
+            
+            
+
+## Parameter 초기화
+
+- 모든 weights를 균등하게 -r부터 r까지 초기화함(수치가 너무 작거나 커지지 않게 하기 위함)
+- 0부터 시작하면 모든게 대칭이 되므로 0부터 시작하지 않음
+
+## Optimizers
+
+- 일반적으로, 간단한 SGD(Stochastic Gradient Descent)가 좋은 효과를 나타남
+- Learning rate 조정 : Learning rate를 매 k번째마다 절반으로 줄임
+
+# Language Modeling
+
+![5-8.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-8.png)
+
+- 다음 단어로 무엇이 올 지 예측하는 것
+- $P(x^{(t+1)} | x^{(t)}, ... \ ,x^{(1)})$ 의 계산을 통해 예측
+
+## Assigns Probability to a Piece of Text
+
+![5-9.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-9.png)
+
+다음 단어를 추천해주는 것이 가장 흔한 예시(구글 검색엔진에서 자동완성도 포함)
+
+## N-Gram Language Models
+
+![5-10.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-10.png)
+
+![5-11.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-11.png)
+
+- 서로 다른 n-gram의 빈도에 대한 통계를 수집해서 다음 단어를 예측
+- 전제 : $x^{(t+1)}$는 앞서 있는 n-1개의 단어들에만 영향을 받음
+- 각각의 확률은 전체 text에 대해 빈도를 세어서 계산  $\approx \ {count(x^{(t+1)}, x^{(t)}, ... \ , x^{(t-n+2)})\over count(x^{(t)}, ... \ , x^{(t-n+2)})}$
+
+Ex) Suppose 4-gram language model
+
+![5-12.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-12.png)
+
+예를 들어,
+
+‘students opend their’이 1000번 발생
+
+‘students opend their books’이 400번 발생
+
+ → $P(books| students \ opened \ their)$ = 0.4
+
+‘students opend their exams’이 100번 발생
+
+ → $P(exams |students  \ opened \ their)$ = 0.1
+
+### N-gram Language model의 문제점
+
+1. 희소성 문제
+- 위의 예시에서, 만약 ‘students opend their’ 뒤에 단어가 한번도 나타나지 않는다면? → 확률은 0
+    
+    ⇒ 해결방법 : Smoothing(모든 단어의 빈도에 대해 약간의 노이즈 델타를 더해줌)
+    
+- 만약 ‘students opend their’ 자체가 한번도 나타나지 않는다면? → 확률을 계산할 수 없음
+    
+    ⇒ 해결방법 : Backoff(’students opened their’ 대신에 ‘opened their’을 조건으로 두고 계산)
+    
+- n이 커질수록 희소성 문제는 더욱 더 심해짐(보통 n >5 일 경우 심각)
+
+1. 저장공간 문제
+- n-gram 전체의 빈도를 전부 저장해야되기 때문에, 용량이 너무 커짐
+
+1. 모순성 문제
+- n-gram model이 문맥을 충분히 반영하지 못하는 문제
+- '다음 단어는 오직 직전의 (n-1)개의 단어에만 영향을 받는다.' 라는 가정 때문에 이전 문맥을 
+충분히 반영하지 못함
+→  n의 크기를 늘리면 이러한 문제를 어느정도 해결할 수 있지만 동시에 희소성이 심화됨
+
+## Neural Language model
+
+- Fixed-window Neural Language Model
+
+![5-13.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-13.png)
+
+- n-gram 모델의 고질적인 문제를 해결하기 위해 등장
+- 3강에서 다루었던 NER의 window-based neural model을 기반으로 진행
+- n-gram 모델과 마찬가지로, 다음 단어를 예측하기 위해 더 큰 크기의 텍스트가 필요한 한계점
+- ‘the students opened their’로 학습한 모델에 다른 새로운 단어(student → pupil)를 사용할 때,
+    
+    n-gram은 어떻게 확률을 계산할지에 대한 정의가 없음
+    
+    Neural language model은 pupil이 student랑 비슷한 의미를 가지니까 그대로 예측 가능
+    
+
+- 장점
+    - 희소성 문제로부터 해결
+    - 모든 n-gram의 정보를 저장할 필요가 없음
+- 문제점
+    - Fixed window의 사이즈가 너무 작음
+    - 윈도우 사이즈를 늘리더라도 중요한 문맥을 포함하지 않을 수 있음
+    - 단어의 위치에 따라 가중치가 다르기 때문에 같은 단어에 대해서도 여러번의  학습 수행
+
+# Recurrent Neural Networks(RNN)
+
+![5-14.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-14.png)
+
+- Hidden layer(Hidden states)가 존재
+- 첫번째 단어로부터 hidden states를 계산하고, 두번째 단어를 예측할 때 두번째 단어 뿐 아니라, 첫번째 단어로부터 계산한 hidden states값도 영향을 줌
+    
+    ⇒ 이전에 있던 단어가 hidden layer을 통해 다음 단어에 영향을 줌
+    
+
+## Simple RNN language model
+
+![5-15.PNG](%5BCS224n%5D%20Lecture%205%2071db9e711f304eec94a8d1e03b8d48ca/5-15.png)
+
+- 장점
+    1. 이론상으로는 input length에 상관없이 다음 단어를 예측할 수 있음
+    2. 먼 곳에 위치한 단어도 고려할 수 있어 context를 반영할 수 있음
+    3. input이 길어져도 model size가 증가하지 않음
+
+- 단점
+    1. 다음 단계로 진행하기 위해서는 이전 단계의 계산이 완료되어야 하므로 계산이 병렬적으로 진행되지 않아 느림
+    2. 이론적으로는 먼 곳의 단어를 반영할 수 있지만 실제로는 Vanishing gradient등의 문제가 있어 context가 반영되지 않는 경우도 있음
