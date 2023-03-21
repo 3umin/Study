@@ -2,7 +2,7 @@
 
 # Machine Translation(MT)
 
-![7-1.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-1.png)
+<img width="327" alt="7-1" src="https://user-images.githubusercontent.com/99728502/226569998-d772eeb6-4556-40fb-acec-3fde42c0ce26.png">
 
 - 하나의 언어(source language)로 작성된 문장을 다른 언어(target language)로 작성된 문장 y로 변환하는 기술
 - Machine Translation(기계번역)의 첫 등장은 1950년대 냉전시기
@@ -12,8 +12,8 @@
 
 - Statiscal Machine Tranlsation(SMT)
     
-    ![7-2.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-2.png)
-    
+    <img width="374" alt="7-2" src="https://user-images.githubusercontent.com/99728502/226570027-2c2151ee-8ac4-4343-a54b-ffb34486f318.png">
+
     - 데이터를 통해 확률 분포를 학습하는 방법(90년대~2010년대 탄생)
     - input sentence x를 output sentence인 y로 번역할 때, 확률이 가장 높은 sentence를 선택
     - 베이즈 정리를 활용해 해당 확률을 위의 수식과 같은 형식으로 변형해 각각의 확률을 계산
@@ -22,43 +22,43 @@
 
 ## How to learn translation model P(x|y)?
 
-![7-3.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-3.png)
+<img width="314" alt="7-3" src="https://user-images.githubusercontent.com/99728502/226570048-7e20a44e-319e-46d9-b5e7-f7bccb7d82ef.png">
 
 - 많은 양의 parallel data가 필요
 - Parellel data: 같은 문장을 고대 이집트어, Demotic, 고대 그리스어 등으로 parallel하게 나열
 
 ### 정렬(Alignment)
 
-![7-4.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-4.png)
+<img width="291" alt="7-4" src="https://user-images.githubusercontent.com/99728502/226570066-039be525-f2b1-4476-a98a-bbd832896672.png">
 
 - P(x|y)에 정렬변수 a를 추가 → P(x, a|y)
 
-![7-5.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-5.png)
+<img width="335" alt="7-5" src="https://user-images.githubusercontent.com/99728502/226570094-0f7920c7-8c2c-4be1-8fb1-a3aa3122a31d.png">
 
 - 어떤 단어들은 대응되는 짝이 없을 수도 있음
 
-![7-6.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-6.png)
+<img width="270" alt="7-6" src="https://user-images.githubusercontent.com/99728502/226570114-dc9bc2df-3dd4-4928-ad94-db7ec3a02eb6.png">
 
 - 어떤 단어들은 many-to-one(하나의 프랑스 단어가 여러개의 영어 단어로 번역)
 
-![7-7.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-7.png)
+<img width="340" alt="7-7" src="https://user-images.githubusercontent.com/99728502/226570138-1f82dde2-c3b5-4d6f-a502-afa3e8a8e7b3.png">
 
 - 그 반대로 one-to-many도 가능
 
-![7-8.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-8.png)
+<img width="240" alt="7-8" src="https://user-images.githubusercontent.com/99728502/226570158-6cb05810-ede9-42a7-b4e5-96ee87727a25.png">
 
 - many-to-many도 가능(딱 떨어지지 않게 여러개의 단어가 여러개의 단어로 번역)
 
 ### 이와같이 혼란스러운 상황에서 어떻게 잘 학습을 시킬 수 있을까?
 
-![7-9.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-9.png)
+<img width="373" alt="7-9" src="https://user-images.githubusercontent.com/99728502/226570177-52a5e1d2-6fbd-4712-b8b8-caf3da045076.png">
 
 1. 무차별 대입
 - 모든 가능한 y와 그 확률을 일일히 구함 → 비용소모 너무 큼!
 1. Decoding(Heuristic 알고리즘)
 - 낮은 확률을 가진 항목은 계산하지 않고 높은 확률 위주로 계산
 
-![7-10.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-10.png)
+<img width="314" alt="7-10" src="https://user-images.githubusercontent.com/99728502/226570191-25f2a2ba-2dd4-4deb-bc0d-afa46d9859a0.png">
 
 - 위의 그림은 전체 경우의 수를 나열한 것
 - 여기서 reasonably likely translation(낮은 확률 제거)을 취한 뒤에 전개
@@ -73,7 +73,7 @@
 
 # Neural Machine Translation
 
-![7-11.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-11.png)
+<img width="470" alt="7-11" src="https://user-images.githubusercontent.com/99728502/226570215-5598fc49-ca68-4c9c-aba8-474c7009f7e3.png">
 
 - Sequence-to-Sequence(seq2seq)이라고 불림
 - Encoder RNN과 Decoder RNN 두개의 RNN을 포함
@@ -96,7 +96,7 @@ ex)
 
 ## seq2seq 모델은 Conditional Language mode의 사례
 
-![7-12.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-12.png)
+<img width="361" alt="7-12" src="https://user-images.githubusercontent.com/99728502/226570258-6d34bf4d-a653-4358-bf67-2bc530a5d7af.png">
 
 - Language Model : Decoder가 target sentence y의 다음 단어를 예측
 - Conditional : 그 예측이 source sentence x의 조건부 확률을 통해 계산됨
@@ -104,7 +104,7 @@ ex)
 
 ## 어떻게 NMT를 Train하는가?
 
-![7-13.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-13.png)
+<img width="426" alt="7-13" src="https://user-images.githubusercontent.com/99728502/226570283-e5fbe911-70af-4914-ad28-c4e46302394e.png">
 
 - Encoder RNN에 문장을 넣고, 디코더 RNN의 모든 단계에서 각각 다음에 올 y hat의 손실을 계산
 - 손실을 모두 더한 뒤 단계 수로 나누어 최종 loss 값 계산
@@ -113,7 +113,7 @@ ex)
 
 ## Multi-layer RNN을 통해 더 복잡한 표현을 계산할 수 있음
 
-![7-14.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-14.png)
+<img width="484" alt="7-14" src="https://user-images.githubusercontent.com/99728502/226570305-bd699bf8-e63c-4a1e-bd58-5c8a5f34ca6c.png">
 
 - lower RNN은 lower-level feature을 계산하고, higher RNN은 higer-level feature을 계산
     
@@ -123,7 +123,7 @@ ex)
 
 ## Greedy decoding
 
-![7-15.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-15.png)
+<img width="188" alt="7-15" src="https://user-images.githubusercontent.com/99728502/226570329-dcccf5c2-ed6f-47fe-b3d2-e746b39b9cce.png">
 
 - 가장 확률이 높은 단어를 도출하다 보니 한번 내린 결정을 수정 못함
 - 만약 ‘he hit me with a pie’가 정답인데, hit 다음에 me가 아니라 a가 나오게 된다면, 틀린 문장임을 알더라도 다시 돌아가서 a를 me로 수정할 수 없고, 이미 나와버린 a 다음으로 계속해서 다음 단어들을 출력해야함
@@ -132,7 +132,7 @@ ex)
 
 1. Exhuastive search decoding
 
-![7-16.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-16.png)
+<img width="355" alt="7-16" src="https://user-images.githubusercontent.com/99728502/226570350-a1e0214b-420d-4355-80f2-ae580e813b98.png">
 
 - 철저하게 가능한 sequence y에 대해서 계산
 - 디코더의 각 단계 t에서, $V^t$개의 가능한 부분 번역을 모두 계산(V: 단어 크기)
@@ -140,7 +140,7 @@ ex)
 
 1. Beem search decoding
 
-![7-17.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-17.png)
+<img width="367" alt="7-17" src="https://user-images.githubusercontent.com/99728502/226570366-6dee0d0a-121f-4d27-8fe3-a8e2d0bfc9c3.png">
 
 - 디코더의 각 단계에서 k 개의 가장 가능성이 높은 부분 번역을 선택해 진행
 - k는 빔의 크기가 되고, k의 크기를 증가시킬수록 더 많은 것들을 고려하게 됨
@@ -150,7 +150,7 @@ ex)
 
 ### Beem search decoding 예시
 
-![7-18.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-18.png)
+<img width="423" alt="7-18" src="https://user-images.githubusercontent.com/99728502/226570384-f7f35f32-5384-4093-80c7-4aba0d4c1e58.png">
 
 - k=2이며 he와 i에서 시작함
 - he와 i 뒤에 score가 높은 것들을 각각 2개씩 구하고, 그 2개씩 뽑은 것들에서 score가 높은것들을 2개씩 계속 뽑으며 진행
@@ -161,9 +161,9 @@ ex)
 - 보통 미리 지정한 한계 타임스텝에 도달하거나, 미리 지정한 가설의 수만큼 완성하면 종료
 - Beem search decoding은 한 가설이 end 토큰을 생성하며 끝이 나면, 그것은 다로 두고 다시 다른 가설을 탐색 ⇒ 다시 돌아올 수 없어서 오류를 수정할 수 없는 문제 해결
 
-![7-19.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-19.png)
+<img width="368" alt="7-19" src="https://user-images.githubusercontent.com/99728502/226570408-1422368f-9a27-4169-8070-0037d1876921.png">
 
-![7-20.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-20.png)
+<img width="183" alt="7-20" src="https://user-images.githubusercontent.com/99728502/226570426-e79e25fc-0358-4fd6-a10a-fb6ba9bdcf23.png">
 
 - Beem search decoding을 거쳐 완성된 가설 중 가장 높은 점수를 받은 것을 선택
 - 여기서 문제는 가설의 길이가 길수록 낮은 점수를 받게 되어서 정확하지 않더라도 짧은 길이의 가설을 채택하는 경우가 생김 ⇒ time step의 수(t)로 나누어 평균을 통해 이 문제 해결
@@ -187,7 +187,7 @@ ex)
 
 - MT progress over time
 
-![7-21.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-21.png)
+<img width="514" alt="7-21" src="https://user-images.githubusercontent.com/99728502/226570466-0271d399-5b9a-42bb-a9ee-10957dd5531c.png">
 
 - 2014년에 첫번째 seq2seq 논문이 나오고, 2016년에 구글번역이 SMT에서 NMT로 전환
 - 지난 수년간 수백명의 엔지니어가 이뤄내던 성과를 소수의 엔지니어로 몇달만에 더 나은 성과를 보였음
@@ -209,7 +209,7 @@ NMT의 개발로 많은 점이 좋아졌지만, 한계점도 여전히 존재
 
 ## Sequence-to-sequence: bottelneck problem
 
-![7-22.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-22.png)
+<img width="431" alt="7-22" src="https://user-images.githubusercontent.com/99728502/226570503-2574f3a2-0e0b-468c-8b87-73342dae64be.png">
 
 - Encoder RNN의 마지막 단계에서 문장 전체의 인코딩 진행 → 정보가 쏠려버리는 병목현상 발생
 
@@ -217,7 +217,7 @@ NMT의 개발로 많은 점이 좋아졌지만, 한계점도 여전히 존재
 
 ## Attention : 각 단계별로 집중도를 주어 병목현상 해결
 
-![7-24.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/7-24.png)
+<img width="419" alt="7-24" src="https://user-images.githubusercontent.com/99728502/226570526-c6b72d9d-f5c2-4918-ada2-025b42a2dd0d.png">
 
 - 디코더와 인코더의 각 단계별로 내적을 시켜 Attention score을 구함
     - Attention score : 인코더의 모든 hidden state 각각의 항목이 디코더 현 시점의 hidden states와 얼마나 유사한지 보여줌
@@ -226,7 +226,7 @@ NMT의 개발로 많은 점이 좋아졌지만, 한계점도 여전히 존재
 
 ### Attention 수식화
 
-![8-1.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/8-1.png)
+<img width="491" alt="8-1" src="https://user-images.githubusercontent.com/99728502/226570568-1439b6fa-7bb8-465c-8aef-57bdfd977bf1.png">
 
 - Encoder hidden states와 Decoder hidden states의 내적으로 Attention scores를 계산
 - Attention scores를 softmax에 집어넣어 Attention distribution을 구함
@@ -243,7 +243,7 @@ NMT의 개발로 많은 점이 좋아졌지만, 한계점도 여전히 존재
 
 ### Attention variants 계산방법
 
-![8-2.PNG](%5BCS224n%5D%20Lecture%207%20&%208%20be0bee276ee547558453834bc8b6b896/8-2.png)
+<img width="520" alt="8-2" src="https://user-images.githubusercontent.com/99728502/226570580-492764e4-e3f0-4cf6-8818-7875ff84b941.png">
 
 - Multiplicative attention
     - Attention score을 계산할 때 일부 정보만 가져다가 계산
