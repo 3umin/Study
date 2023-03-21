@@ -3,9 +3,6 @@
 
 - Word2Vec, GloVe, NER, Contingency / Dependency Parsing, Language Modeling, N-Gram, RNN, Vanishing Gradient, Exploding Gradient, LSTM, Seq2Seq, Attention, Transformer, GRU, QA 등 NLP에 필요한 수많은 기본 개념을 학습 
 
-- md 파일을 하나씩 올리고 싶었으나, 사진 문제로 노션 링크로 첨부
-
-https://cherry-orbit-69a.notion.site/CS224n-8d8132f7df2844878ef39b84e07728e1
 
 ----
 - **Lecture 1** : NLP 개요, Wordnet, Word2Vec, Optimization
