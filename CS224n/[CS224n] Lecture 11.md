@@ -153,7 +153,7 @@ SQuAD 데이터셋에서 인간의 점수보다 이미 더 높은 점수를 기�
 ## Retriver-reader framework(검색-읽기 프레임워크)
 
 - Retriver : $f(𝒟, Q)$  → $P_1, ... \ , P_K$,              𝒟: large collection of documents
-- Reader : $g(Q, \left\{P_1, ...\ , P_K \right\}) = A$              A : an answer string
+- Reader : $g(Q, {P_1, ...\ , P_K}) = A$              A : an answer string
 
 <img width="412" alt="17" src="https://user-images.githubusercontent.com/99728502/226582530-4d72af19-e91f-4109-8687-6f400346e989.png">
 
