@@ -9,9 +9,9 @@
 
     $S = f({y_{<t}, \theta)$ 로 점수 측정
     
-    $L = -\sum_{t=1}^TlogP(y_t^*|\{y^*\}_{<t})$ negative loglikelihood를 minimize하며 훈련
+    $L = -\sum_{t=1}^TlogP(y_t^*|{y^*}_{<t})$ negative loglikelihood를 minimize하며 훈련
     
-    $\hat y_t = g(P(y_t|\{y_{<t}\}))$,    g : decoding algorithm
+    $\hat y_t = g(P(y_t|{y_{<t}}))$,    g : decoding algorithm
     
 
 ## Decoding
