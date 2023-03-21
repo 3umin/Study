@@ -4,8 +4,8 @@
 
 - 같은 entity를 지칭하는 모든 mention을 식별하는 것
     
-    ![1.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/1.png)
-    
+    ![1](https://user-images.githubusercontent.com/99728502/226586443-bc17bc77-9979-4fbb-967b-eac7eccf5380.png)
+
 - 위의 문장의 경우, 같은 색의 단어는 모두 같은 의미
 - 여기서 They와 같이 2개 이상의 entity를 포함하는 경우, split antecedents라고 부름
 - NLP에선 이러한 split antecedents를 처리할 수 있는 기술이 없음
@@ -13,13 +13,13 @@
 - Information extraction, question answering, summarization, machine translation, language modeling 등에 활용
 - Machine Translation
     
-    ![2.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/2.png)
-    
+    <img width="364" alt="2" src="https://user-images.githubusercontent.com/99728502/226586464-5c3f98d7-2840-4512-b9c6-d8e0c32433ca.png">
+
     - 구글 번역기에선 학습된 문장을 통해 he 또는 she를 결정하게 되는데, 그 결과 각 성별에 대한 고정관념(여자이름, 남자이름 등)을 반영하기도 한다
 
 # Coreference Resolution in Two Steps
 
-![3.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/3.png)
+<img width="358" alt="3" src="https://user-images.githubusercontent.com/99728502/226586480-8678655a-922d-4cb4-aecb-765befef38fc.png">
 
 - mention을 탐지한 다음에, 그 멘션들을 집단화
 
@@ -74,8 +74,8 @@
 
 - cataphora : anaphora가 앞에 나온 단어가 아니라, 뒤에 나올 단어를 지칭하는 것
     
-    ![4.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/4.png)
-    
+    <img width="379" alt="4" src="https://user-images.githubusercontent.com/99728502/226586515-046810e8-4a0e-496a-b186-614c04b2a21b.png">
+
     - 하지만 최근에는 잘 고려하지 않음, coreference 시스템에서도 mention을 발견하면 그 앞에 나오는 문장을 살피지 그 뒤에 오는 문장은 살피지 않는다.
 - coreference model의 4가지 종류
     - Rule-based(pronomial anaphora resolution)
@@ -85,11 +85,11 @@
 
 ### Traditional pronomial anaphora resolution: Hobb’s naive algorithm
 
-![5.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/5.png)
+<img width="496" alt="5" src="https://user-images.githubusercontent.com/99728502/226586540-603715f4-ff09-4ae3-b8c1-8a66341417b0.png">
 
 - him에 대한 reference를 찾고 싶음
 
-![6.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/6.png)
+<img width="522" alt="6" src="https://user-images.githubusercontent.com/99728502/226586557-fd12cb13-5f45-4135-9210-64b73b157196.png">
 
 ### Knowledge-based Pronominal coreference
 
@@ -106,28 +106,28 @@ She poured water from **the pitcher** into **the cup** until **it** was empty.
 
 “I voted for Nader because he was most aligned with my values,” she said.
 
-![7.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/7.png)
+<img width="348" alt="7" src="https://user-images.githubusercontent.com/99728502/226586577-c8c4e2a4-6b0d-4e7b-9d33-e9ca9bbe2420.png">
 
 - 모든 pair of mention이 coreference를 가지는지를 Yes or No로 이진분류
 - 이 경우 she와 (I, Nader, he, my)가 각각 coreferene를 가지는지를 확인하고, 그 결과 I와 my가 coreference를 가지는 것으로 나타남
 - Training Mention Pair
     
-    ![8.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/8.png)
-    
+    <img width="390" alt="8" src="https://user-images.githubusercontent.com/99728502/226586598-d6af4f23-5e27-4e70-8610-f3a57a265a87.png">
+
 - Testing Mention Pair
     
-    ![9.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/9.png)
-    
+    <img width="357" alt="9" src="https://user-images.githubusercontent.com/99728502/226586612-dca53e6a-8160-4a53-866f-6026d0ab5ed3.png">
+
     - Transitive closure 사용 : A와 B가 coreference하고 B와 C가 coreference → A와 C도 coreference
 - Disadvantage of Mention Pair Models
     
-    ![10.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/10.png)
-    
+    <img width="441" alt="10" src="https://user-images.githubusercontent.com/99728502/226586634-d06a5df3-99a6-4af7-8d2c-75298484620c.png">
+
     - 만약 mention이 많이 들어있는 긴 문서가 있으면, 각각의 mention을 모두 찾아내서 yes라는 값을 배출하는 것이 아니라 한 mention을 잘 표현하는 특정한 mention 하나를 찾아내고 싶음 → mention ranking
 
 ### Mention Ranking
 
-![11.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/11.png)
+<img width="411" alt="11" src="https://user-images.githubusercontent.com/99728502/226586653-09b60dbf-3e1c-4c12-95ff-f398ebc6c0d1.png">
 
 - 각각의 멘션에 대해 가장 높은 점수를 기록하는 antecedent를 찾음
 - Dummy NA mention은 이전의 mention 중에 coreference를 못찾을 때 선택
@@ -136,27 +136,27 @@ She poured water from **the pitcher** into **the cup** until **it** was empty.
     - idea : “특정 길이를 만족하는 모든 가능한 단어의 시퀀스에 대한 벡터를 계산하면 어떨까?”
     - CNN 방법을 통해 각 글자에 대해서 계산
     
-    ![12.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/12.png)
+    <img width="547" alt="12" src="https://user-images.githubusercontent.com/99728502/226586670-dbfec666-af3a-4649-854f-68dbdc9ea143.png">
     
-    ![13.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/13.png)
-    
-    ![14.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/14.png)
-    
+    <img width="425" alt="13" src="https://user-images.githubusercontent.com/99728502/226586678-42242686-4c44-4b13-9ded-d13327947635.png">
+
+    <img width="509" alt="14" src="https://user-images.githubusercontent.com/99728502/226586706-4e0945ae-94c0-489c-ade6-0958770ee8b8.png">
+
 
 ### End-to-end Neural Coref Model
 
-![16.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/16.png)
+<img width="401" alt="16" src="https://user-images.githubusercontent.com/99728502/226586732-0f2227e4-2c6f-4c80-b23a-ef5ac839e0cc.png">
 
 1. word embedding matrix와 character-level CNN을 이용해 계산
 2. 양방향 LSTM에 학습
 3. span representation을 계산
     
-    ![15.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/15.png)
-    
+    <img width="388" alt="15" src="https://user-images.githubusercontent.com/99728502/226586750-74fcaa23-9099-4375-b277-500e8240aee1.png">
+
 4. Attention score과 Attention distribution을 통해 final representation 계산
 5. 마지막으로 coreference를 판정하기 위한 score을 계산
     
-    ![17.PNG](%5BCS224n%5D%20Lecture%2013%203f8a07bb15964092adf8370d540c6224/17.png)
-    
+    <img width="392" alt="17" src="https://user-images.githubusercontent.com/99728502/226586783-b4813470-8054-41eb-af3a-19d6ab4f56e3.png">
+
 
 - 현재는 BERT-based coref가 가장 좋은 효과를 발휘
