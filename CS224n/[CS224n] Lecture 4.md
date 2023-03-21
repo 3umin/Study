@@ -4,7 +4,7 @@
 
 ## Constitency Parsing
 
-![4-1.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-1.png)
+![4-1](https://user-images.githubusercontent.com/99728502/226567227-bbc859c2-f17a-43c2-91ee-c73def5b8ae4.png)
 
 - 문장의 구성요소를 파악하여 문법적인 구조를 분석
 - 각 단어들끼리 결합하여 어떠한 구(phrase)를 구성하고, 그 구는 다른 구와 또 결합해 문장이 됨
@@ -18,7 +18,7 @@ the cuddly cat by the door(명사구)
 
 ## Dependency Parsing
 
-![4-2.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-2.png)
+![4-2](https://user-images.githubusercontent.com/99728502/226567247-9f1e9a22-a992-4363-a09b-0e61818a4a06.png)
 
 - 단어간 의존관계를 파악하는 구조 분석
 - 단어간 관계를 의존관계(수식관계)로 표현
@@ -53,8 +53,7 @@ by is dependent of door
     
     따라 의미가 달라짐
     
-
-![4-3.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-3.png)
+![4-3](https://user-images.githubusercontent.com/99728502/226567287-f798767e-e6d2-45e9-a87a-4b5638789e7a.png)
 
 1. 샌 조스가 칼로 남자를 죽였다
 2. 샌 조스가 칼을 든 남자를 죽였다
@@ -63,14 +62,14 @@ by is dependent of door
 
 - Coordination Scope Ambiguity : 특정 단어가 수식하는 대상의 범위가 달라짐에 따라 의미 다름
 
-![4-4.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-4.png)
+![4-4](https://user-images.githubusercontent.com/99728502/226567304-7e456525-83f5-42b8-a1ee-b9128aa3bb01.png)
 
 1. 우주선 베테랑이자 오랜 나사의 임원인 Fred Gregory가 이사로 임명되었다(한명)
 2. 우주선 베테랑 A씨와 오랜 나사의 임원인 Fred Gregory가 이사로 임명되었다(두명)
 
 # Dependency Grammar and dependency structure
 
-![4-6.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-6.png)
+![4-6](https://user-images.githubusercontent.com/99728502/226567325-f49f11d6-6500-46a3-aec9-fb1e1e855c57.png)
 
 head인 submitted에서 시작해서
 
@@ -84,7 +83,7 @@ nmod = modifier
 
 ### 1. Sequence 형태
 
-![4-7.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-7.png)
+![4-7](https://user-images.githubusercontent.com/99728502/226567347-0373bd05-457e-4abd-8cbb-5728849552b8.png)
 
 - head에서 dependent로 화살표가 그려짐
 - 가상의 노드 ROOT를 추가하여 모든 성분의 최종 head를 ROOT로 설정
@@ -92,7 +91,7 @@ nmod = modifier
 
 ### 2. Tree Bank
 
-![4-8.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-8.png)
+![4-8](https://user-images.githubusercontent.com/99728502/226567360-9a6d8e16-c4c4-490f-9471-9969d29fce16.png)
 
 트리뱅크의 장점
 
@@ -113,7 +112,7 @@ nmod = modifier
 - 두 단어의 의존여부를 차례대로 결정해나가면서 점진적으로 dependency structure을 구성
 - stack, buffer, arcs 로 구성
 
-![4-9.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-9.png)
+![4-9](https://user-images.githubusercontent.com/99728502/226567428-d8ec6eac-a3ae-4e24-853c-bc3c434fdd6b.png)
 
 Input
 
@@ -127,7 +126,7 @@ Buffer → Stack → Set of arcs
     - Left-arc: 좌측으로 dependency가 결정
     - Right-arc: 우측으로 dependency가 결정
 
-![4-10.PNG](%5BCS224n%5D%20Lecture%204%20692e5a414f9f4a4fb80e5e02b522a34e/4-10.png)
+![4-10](https://user-images.githubusercontent.com/99728502/226567447-28756386-60fb-4c91-ab89-139b471e7bf4.png)
 
 1. I ate까지 왔을때 I가 ate의 dependent이므로 I는 stack에서 사라지고 ate만 남음
 2. Shift를 선택하고 Fish를 가져옴
