@@ -5,9 +5,9 @@
 - 논리적이고 유용한 텍스트를 생성하는 시스템
 - 기계번역, 요약, 채팅, QA 등이 있음
     
-    ![1.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/1.png)
-    
-    $S = f(\left\{y_{<t} \right\}, \theta)$ 로 점수 측정
+    <img width="519" alt="1" src="https://user-images.githubusercontent.com/99728502/226583260-e893a0b9-fefc-4a37-9317-2b36fb1bf1e4.png">
+
+    $S = f({y_{<t}, \theta)$ 로 점수 측정
     
     $L = -\sum_{t=1}^TlogP(y_t^*|\{y^*\}_{<t})$ negative loglikelihood를 minimize하며 훈련
     
@@ -36,8 +36,8 @@
     - $\hat y_t = argmax_{w \in V} P(y_t = w|y_{<t})$
     - 탐색하는 시간이 가장 빠르지만, 결과가 그리 좋지는 않음
     
-    ![2.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/2.png)
-    
+    <img width="473" alt="2" src="https://user-images.githubusercontent.com/99728502/226583294-bb16923c-a175-42ad-abb5-0ce0d6f19d18.png">
+
     - 반복이 계속해서 일어나는 문제가 발생
         
         → n-gram을 반복하지 않거나, coverage loss 등의 방법 등으로 해결
@@ -48,20 +48,20 @@
     - Vanilla sampling은 모든 토큰을 선택지로 두기 때문에, 문맥에 맞지 않는 경우가 많음
     - 그래서 Top-k sampling을 활용 : k개의 가장 확률이 높은 토큰 중 랜덤추출
         
-        ![3.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/3.png)
-        
+        <img width="417" alt="3" src="https://user-images.githubusercontent.com/99728502/226583319-2d99e294-647d-4095-866e-482577d4fa1f.png">
+
         (k = 5인 예시)
         
-        ![4.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/4.png)
-        
+        <img width="529" alt="4" src="https://user-images.githubusercontent.com/99728502/226583342-1f2e4091-0564-41bb-9ab0-b1e6df7ae121.png">
+
     - Top-k sampling은 너무 빠르거나, 반대로 너무 느리게 끝날 가능성이 존재
         - 확률분포가 균등할 때, 제한된 k는 많은 가능한 옵션을 제거
         - 확률분포가 치우쳐질 때, 높은 수의 k는 너무 많은 옵션을 제공
         
         → Top-p sampling : 가장 누적분포 양이 많은 토큰 중 p개를 추출
         
-        ![5.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/5.png)
-        
+        <img width="507" alt="5" src="https://user-images.githubusercontent.com/99728502/226583367-9567d34e-5eeb-4103-9eb3-184333520491.png">
+
     - Scaling 무작위화를 위해 softmax temperature 적용
         - temperature 하이퍼파라미터를 적용
             
@@ -97,7 +97,7 @@
 
 # Evaluation NLG models
 
-![6.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/6.png)
+<img width="271" alt="6" src="https://user-images.githubusercontent.com/99728502/226583417-7fe86bdf-6917-4de4-887c-24d6d29febf3.png">
 
 - generated 와 gold-standard(human-written)의 유사성을 나타내는 점수 계산
 - 2개의 종류 존재
@@ -109,12 +109,12 @@
 - BLEU, ROUGE, METEOR, CIDEr 등
 - Machine Translation에 이상적이지 않음(특히 개방형 대답에 매우 안좋음)
     
-    ![7.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/7.png)
-    
+    <img width="527" alt="7" src="https://user-images.githubusercontent.com/99728502/226583437-806282bb-a532-4040-829a-3fa05c451bbe.png">
+
 
 ## Semantic overlap metrics
 
-![8.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/8.png)
+<img width="525" alt="8" src="https://user-images.githubusercontent.com/99728502/226583480-d291ca12-3360-4613-9d76-7aa0ad006337.png">
 
 ## Model-based metrics
 
@@ -122,12 +122,12 @@
 - text 유닛이 임베딩으로 활용되어 n-gram bottleneck 문제 없음
 - Word distance functions
     
-    ![9.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/9.png)
-    
+    <img width="537" alt="9" src="https://user-images.githubusercontent.com/99728502/226583515-0471b4b0-6a39-4664-9e63-ba8948a53050.png">
+
 - Beyond word matching
     
-    ![10.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/10.png)
-    
+    <img width="490" alt="10" src="https://user-images.githubusercontent.com/99728502/226583532-4c78ebc8-fab9-4880-8c09-d08a467873cc.png">
+
 
 ## Human evaluation
 
@@ -142,7 +142,7 @@
     
 - 그래서 사람의 피드백을 바탕으로 한 모델 탄생
 
-![11.PNG](%5BCS224n%5D%20Lecture%2012%2040edd0b5376c4766b7aaab673183a5a4/11.png)
+<img width="513" alt="11" src="https://user-images.githubusercontent.com/99728502/226583554-c2c8ef4b-e73e-47d3-92b3-9306a8b9ddc4.png">
 
 # NLG의 윤리
 
