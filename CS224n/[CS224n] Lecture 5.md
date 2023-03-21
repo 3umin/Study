@@ -15,7 +15,6 @@
 
 <img width="328" alt="5-2" src="https://user-images.githubusercontent.com/99728502/226567967-da39369b-05f7-4f55-a663-961bb1d14f6b.png">
 
-                                        (기존의 머신러닝)                               (딥러닝)
 
 - 신경망은 비선형 관계를 나타낼 수 있음
 - 분류 결정은 softmax에 의해 선형적으로 결정되지만, 원본 데이터에선 비선형으로 나타남
