@@ -4,7 +4,7 @@
 
 ## Training RNN
 
-![6-1.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-1.png)
+![6-1](https://user-images.githubusercontent.com/99728502/226568879-6300dc25-5c3d-4880-a192-f3b68ab4a458.png)
 
 1. 각 단어를 RNN model에 input으로 주고, 모든 단계에서 예상되는 다음 단어를 계산
 2. 모든 단계에서 예상되는 다음 단어와 실제 다음 단어간 차이의 cross-entropy를 통해 loss 계산
@@ -15,13 +15,13 @@
 
 ## Training the parameters of RNNs : Backpropagation for RNN
 
-![6-2.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-2.png)
+![6-2](https://user-images.githubusercontent.com/99728502/226568907-6ae7e307-0fc4-4e44-910c-c59b05f9d6b8.png)
 
 Gradient를 구하기 위해 multivariable chain rule 적용
 
 - ${d\over dt} f(x(t), y(t)) \ = \ {\partial f \over \partial x} {dx \over dt} + {\partial f \over \partial y} {dy \over dt}$
 
-![6-3.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-3.png)
+![6-3](https://user-images.githubusercontent.com/99728502/226568920-c3cd6dd0-c3d6-4068-a5ab-b268db9715c0.png)
 
 - **Backpropagation through time(BTT)**
     - 각각의 timestep별로 역전파를 실시하여 gradients를 계속 더 해나감
@@ -29,7 +29,7 @@ Gradient를 구하기 위해 multivariable chain rule 적용
 
 ## Evaluating language models
 
-![6-5.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-5.png)
+![6-5](https://user-images.githubusercontent.com/99728502/226568953-2302aa18-7cc7-4b84-83c4-bf2c4cf65645.png)
 
 - perplexity : language model을 통해 예측한 corpus의 역을 corpus 길이로 정규화 해준 값
 - cross-entropy에 로그를 씌우고 exponential을 씌워서 구함, 값이 낮을수록 좋음
@@ -45,16 +45,17 @@ Gradient를 구하기 위해 multivariable chain rule 적용
 - RNN 네트워크를 학습시키기 위해 BPTT를 사용
 - Backpropagation을 하기 위해 chain rule을 매 노드에 적용
 
-![6-6.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-6.png)
+![6-6](https://user-images.githubusercontent.com/99728502/226568974-ea0d5f34-e919-4fc9-a80a-0fba38b57168.png)
 
-![6-8.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-8.png)
+![6-8](https://user-images.githubusercontent.com/99728502/226568995-d1a3bb32-5405-499e-8b04-3e9fc023da0e.png)
+
 
 - 계속 나아갈 수록 gradient는 계속해서 작아짐 → 모수에 큰 영향을 못 줄 수 있음
     
     → vanishing gradient
     
+![6-9](https://user-images.githubusercontent.com/99728502/226569017-2dd8cbdc-8670-42a4-88b7-98148bdac4a2.png)
 
-![6-9.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-9.png)
 
 - 만약 Wh가 어느정도 작다면, 기하급수적으로 문제가 발생
 - 시퀀스의 길이가 길어질 수록 gradient가 거의 없는 것만큼 작아지게 됨
@@ -68,7 +69,7 @@ Gradient를 구하기 위해 multivariable chain rule 적용
 
 ### Vanishing gradient의 해결 방법
 
-![6-12.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-12.png)
+![6-12](https://user-images.githubusercontent.com/99728502/226569064-c26f2fb3-efcc-4f6b-80c3-8d31e00c0612.png)
 
 - vanilla RNN에서 hidden state가 자주 고쳐쓰게 되어 정보 유지가 어려움
     
@@ -77,13 +78,13 @@ Gradient를 구하기 위해 multivariable chain rule 적용
 
 ### Effect of vanishing gradient on RNN-LM
 
-![6-10.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-10.png)
+![6-10](https://user-images.githubusercontent.com/99728502/226569115-d82da1d3-bff7-4e25-8b2f-7e931b21332c.png)
 
 - 긴 문장이 input으로 들어왔을 때, 마지막에 올 단어가 ticket이라는 것을 첫번째 줄의 ticket으로 유추할 수 있지만, "vanishing gradient" 문제로 멀리 떨어진 단어들과의 dependency를 학습하지 못하게 되고, 마지막 단어로 ticket이 아닌 가까이 있는 printer로 잘못 유추
 
 ## Exploding gradient
 
-![6-11.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-11.png)
+![6-11](https://user-images.githubusercontent.com/99728502/226569147-f875e5e5-9596-4b9b-9d8f-ca7fcb564999.png)
 
 - SGD update의 단계가 너무 커져서 발생
 - 해결방법
@@ -106,7 +107,7 @@ Gradient를 구하기 위해 multivariable chain rule 적용
     - 각각의 타임스텝에서, gates는 open(1), closed(0) 사이의 값을 가짐(1에 가까울수록 오픈)
     - gates의 값은 문맥에 의해 계산되며, 동적으로 변화함
 
-![6-13.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-13.png)
+![6-13](https://user-images.githubusercontent.com/99728502/226569183-47bbba9e-311b-437b-b466-1b5ed8acc802.png)
 
 - Forget gate : 어떤 정보를 잊고 어떤 정보를 반영할지 결정
     - t번째 시점에서의 x값과 t-1 시점에서의 hidden state를 받아 sigmoid activation function을 통해 0~1 사이 출력
@@ -122,20 +123,20 @@ Gradient를 구하기 위해 multivariable chain rule 적용
     
     1) Residual connections ‘ResNet’(= skip-connections)
     
-    ![6-15.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-15.png)
-    
+    ![6-15](https://user-images.githubusercontent.com/99728502/226569292-1f208c05-baaf-4142-a887-cabe968e2d6c.png)
+
     - input x에 나선형 layer을 지나고 나온 결과를 더해줌으로서, 과거의 내용을 기억
     - 과거의 학습내용 보존 + 추가학습 → gradient vanishing 해결
 
 2) Dense connections ‘DenseNet’
 
-![6-16.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-16.png)
+![6-16](https://user-images.githubusercontent.com/99728502/226569332-95638a94-de41-4dac-b04f-477ca6aba610.png)
 
 - 이전 layer들의 feature map을 계속해서 다음 layer의 입력과 연결하는 방식
 
 3) Highway connections "HighwayNet"
 
-![6-17.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-17.png)
+![6-17](https://user-images.githubusercontent.com/99728502/226569367-2131c57f-1e3c-4b34-bc52-3237ae0ef635.png)
 
 - Residual connections과 비슷
 - T: transform gate / C: carry gate
@@ -147,11 +148,11 @@ Gradient를 구하기 위해 multivariable chain rule 적용
 
 ### Bidirectional RNNs
 
-![6-18.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-18.png)
+![6-18](https://user-images.githubusercontent.com/99728502/226569388-ebd897eb-1975-4a8e-92bf-92a7f3ad0d0e.png)
 
-![6-19.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-19.png)
+![6-19](https://user-images.githubusercontent.com/99728502/226569413-2f0002e6-54e1-47d5-bd74-ee624c1db8d0.png)
 
-![6-20.PNG](%5BCS224n%5D%20Lecture%206%202d793348e38b4d59808887a75828b0dc/6-20.png)
+![6-20](https://user-images.githubusercontent.com/99728502/226569450-5950ff56-62fc-464e-9761-aebcd605f5df.png)
 
 - Bidirectional RNN : Left, Right 두 방향으로 모두 정보를 이용하기 위한 방법
     - 분리된 weight를 가지고 있는 Forward RNN과 Backward RNN을 학습한 후 각 hidden state를 병합해서 최종적인 representation 형성
