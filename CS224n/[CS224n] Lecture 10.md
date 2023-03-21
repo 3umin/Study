@@ -2,7 +2,7 @@
 
 # Word structure and subword models
 
-![1.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/1.png)
+<img width="521" alt="1" src="https://user-images.githubusercontent.com/99728502/226581507-00d76d1d-8cf8-470a-a231-d63f5c0d3aff.png">
 
 - 수많은 단어들을 고정된 단어로 가정
 - 모든 새로운 단어(오타, 파생) 등은 UNK로 일단 매핑
@@ -15,7 +15,7 @@
 
 ### Byte-Pair Encoding Algorithm
 
-![2.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/2.png)
+<img width="522" alt="2" src="https://user-images.githubusercontent.com/99728502/226581570-71912216-f5a1-4abe-94d9-1ecfd078d8ca.png">
 
 - 단어를 subword 토큰으로 부분적으로 나누어 학습
 - 훈련과 테스트 때, 각 단어는 이미 알려진 여러개의 subwords로 구성된 시퀀스로 분리
@@ -32,7 +32,7 @@
 
 ## Pretraining with word embeddings
 
-![3.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/3.png)
+<img width="301" alt="3" src="https://user-images.githubusercontent.com/99728502/226581594-d280be44-d1b9-424f-8272-8b16ffe6b0e6.png">
 
 - 문맥 정보가 없는 pretrained word embedding에서 출발
 - LSTM이나 Transformer 등에서 어떻게 문맥을 구성하는지를 훈련
@@ -40,7 +40,7 @@
 
 ## Pretrained whole model
 
-![4.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/4.png)
+<img width="275" alt="4" src="https://user-images.githubusercontent.com/99728502/226581613-6d470353-e807-4981-80f9-1fc1c0296c26.png">
 
 - 현대 대부분의 NLP 네트워크가 전체 모델에 대한 pretraining으로 초기화됨
 - pretraining 방법은 input 문장의 일부를 숨긴 뒤, 모델이 그 부분을 구성할 수 있도록 훈련
@@ -48,13 +48,13 @@
     → 언어의 표현, 모수 초기화 등에 매우 효과적
     
 
-![6.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/6.png)
+<img width="287" alt="6" src="https://user-images.githubusercontent.com/99728502/226581630-a12527ca-c2d7-48b6-aa67-f21471300a72.png">
 
 - the, my, her, his, some, a 등등을 미리 학습시켜서 문장의 recreate 가능
 
 ## Pretraining through language modeling
 
-![7.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/7.png)
+<img width="256" alt="7" src="https://user-images.githubusercontent.com/99728502/226581653-c7ebac7a-d326-4d62-8452-1595ed2e63e4.png">
 
 - 많은 양의 텍스트에서 language modeling을 수행할 수 있도록 신경망을 학습
     - step 1 : pretrain on language modeling(많은 양의 텍스트에서; 즉 일반적인 데이터를 학습)
@@ -62,7 +62,7 @@
 
 # Pretraining model의 방법
 
-![8.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/8.png)
+<img width="226" alt="8" src="https://user-images.githubusercontent.com/99728502/226581669-593dbe68-486f-4470-a764-47b6f33b3b41.png">
 
 1. Decoders
 - 위에서 배운 Language models를 바탕으로 한 pretraining
@@ -77,9 +77,9 @@
 
 ## Pretraining Decoders
 
-![9.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/9.png)
+<img width="258" alt="9" src="https://user-images.githubusercontent.com/99728502/226581685-28b19925-5e95-409e-a8be-c4caa9589ed5.png">
 
-![10.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/10.png)
+<img width="237" alt="10" src="https://user-images.githubusercontent.com/99728502/226581701-ed3e4e2c-de8e-45f1-916f-8f7dc603fea4.png">
 
 $h_1, ...\ , h_T = Decoder(w_1, ...\,w_T)$
 
@@ -89,7 +89,7 @@ $w_t \sim Ah_{t-1} + b$ : 오른쪽 방법 → 대화의 흐름 파악, 요약 �
 
 - Generative Pretrained Transformer(GPT)
 
-![11.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/11.png)
+<img width="466" alt="11" src="https://user-images.githubusercontent.com/99728502/226581721-ee74be97-7e55-4d01-bf67-4a3345a5bd2c.png">
 
 - 12 layer의 Transformer Decoder로 구성
 - 문장을 entailing/contradictory/neutral 등으로 구분
@@ -97,7 +97,7 @@ $w_t \sim Ah_{t-1} + b$ : 오른쪽 방법 → 대화의 흐름 파악, 요약 �
 
 ## Pretraining Encoders
 
-![12.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/12.png)
+<img width="239" alt="12" src="https://user-images.githubusercontent.com/99728502/226581769-a1a04332-fa1b-44b5-a9c4-314cc8adc3ce.png">
 
 - Encoder는 language model pretraining(Decoder)과 다르게, 양방향의 문맥을 활용
     
@@ -105,7 +105,8 @@ $w_t \sim Ah_{t-1} + b$ : 오른쪽 방법 → 대화의 흐름 파악, 요약 �
     
 - Idea : 인풋 단어의 일부를 [MASK] 토큰으로 가리고, 그 단어를 예측
 
-![13.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/13.png)
+<img width="288" alt="13" src="https://user-images.githubusercontent.com/99728502/226581793-e4d14989-605a-4699-8395-b65939e80790.png">
+
 
 - 랜덤으로 15%의 subword token을 예측
     - 80% 정도의 input 단어를 [MASK] 토큰으로 교체
@@ -114,20 +115,20 @@ $w_t \sim Ah_{t-1} + b$ : 오른쪽 방법 → 대화의 흐름 파악, 요약 �
     
 - BERT(Bidirectional Encoder Representations from Transformers)
 
-![14.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/14.png)
+<img width="497" alt="14" src="https://user-images.githubusercontent.com/99728502/226581822-e542d6ee-a598-42b9-be3e-718e667e2d45.png">
 
 - BERT는 한 단어 뭉치가 다른 뭉치와 유사하게, 또는 랜덤으로 추출되었는지를 예측하기 위해 훈련됨
 - 매우 인기있고 다목적으로 활용 가능
 
 ### Pretrained encoder의 한계점
 
-![15.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/15.png)
+<img width="561" alt="15" src="https://user-images.githubusercontent.com/99728502/226581845-0c6ceaf4-a42e-4d07-8e0d-866dc9db25a4.png">
 
 - 문장 생성을 해야하는 경우, Encoder보단 Decoder를 활용하는 것이 훨씬 유용함
 
 ## Pretraining Encoder-decoder
 
-![16.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/16.png)
+<img width="249" alt="16" src="https://user-images.githubusercontent.com/99728502/226581854-d26e2107-1d8f-4131-ae56-6f682c626bb8.png">
 
 $h_1, ...\ , h_T = Encoder(w_1, ...\,w_T)$
 
@@ -135,14 +136,14 @@ $h_{T+1}, ...\ , h_{2T} = Decoder(w_1, ...\,w_T, h_1, ...\,h_T)$
 
 $y_i \sim Aw_i + b, i >T$  
 
-![17.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/17.png)
+<img width="673" alt="17" src="https://user-images.githubusercontent.com/99728502/226581871-18ddbf32-3647-4606-936f-84505c1ebf0a.png">
 
 - 인코더와 디코더 방식의 장점을 결합한 방법
 - input 문장에 target을 없앤 다음 target을 decoder에서 출력 목표
 
 ## GPT-3
 
-![18.PNG](%5BCS224n%5D%20Lecture%2010%2029f95975955e45c6b1b683c8770aa7dc/18.png)
+<img width="553" alt="18" src="https://user-images.githubusercontent.com/99728502/226581883-11de8fca-175f-4c5a-9699-62ec2e6e563e.png">
 
 - 아주 큰 Language model(1750억개에 달하는 모수 존재)
 - Gradient step을 활용하지 않고, 단순히 문맥 예시를 확인해가며 학습
