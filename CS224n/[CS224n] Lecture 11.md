@@ -2,7 +2,7 @@
 
 # Question Answering
 
-![1.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/1.png)
+![1](https://user-images.githubusercontent.com/99728502/226582238-ee90c49e-df23-4f7e-9e5d-58114b340d50.png)
 
 - 사람의 질문에 맞게 자연어로 자동적으로 응답하는 시스템
 - 적절한 문서를 출력하는 정보 검색(Information Retriever)과 다르게, 간단한 구로 이루어진 정답을 출력
@@ -16,27 +16,27 @@
 
 - 가장 흔한 예시
 
-![2.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/2.png)
+![2](https://user-images.githubusercontent.com/99728502/226582253-a898864e-854a-48a8-8e3c-97be7bc84739.png)
 
 - QA의 구조
     - 대부분의 QA는 end-to-end training과 BERT같은 pretraining 기법을 기반으로 이루어짐
 
-![3.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/3.png)
+![3](https://user-images.githubusercontent.com/99728502/226582267-ba1acb06-4740-4743-897d-a3894850aeac.png)
 
 - 요즘에는 문자적인 QA를 넘어서, 이미지나 영상 등에서의 질문까지 답하는 시스템으로 발전
     
-    ![4.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/4.png)
-    
+    ![4](https://user-images.githubusercontent.com/99728502/226582283-8db77cb1-4431-4ca1-a2e3-cfba471a8cf4.png)
+
 
 # Reading comprehension
 
-![5.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/5.png)
+![5](https://user-images.githubusercontent.com/99728502/226582302-4094d0cc-97b5-4232-b6ef-eda0fea329db.png)
 
 - 정해진 구절을 이해한 뒤 그 내용에 관련된 질문에 답변하는 것
 - ‘질문에 대해 답변할 수 있는 능력’이 가장 강력한 이해의 표시이므로, reading comprehension은 매우 중요
 - 긴 문장에서 정보의 추출, 그리고 의미적인 역할의 라벨링이 가능
 
-![6.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/6.png)
+![6](https://user-images.githubusercontent.com/99728502/226582326-e4589dd0-bc36-43f5-a19d-87ed8638ec8b.png)
 
 # Standford Question Answering dataset(SQuAD)
 
@@ -54,17 +54,17 @@
 
 - seq2seq model with attention
 
-![7.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/7.png)
+<img width="281" alt="7" src="https://user-images.githubusercontent.com/99728502/226582343-24775f48-b62f-407e-9df0-2af94901a602.png">
 
 passage에 있는 어떤 단어가 질문과 가장 관련이 있는지를 알아야함
 
 ## BiDAF : Bidirectional Attetion Flow model
 
-![8.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/8.png)
+<img width="370" alt="8" src="https://user-images.githubusercontent.com/99728502/226582357-5d80eef9-0588-424c-ae2a-ba6e7131ccef.png">
 
 ### BiDAF: Encoding
 
-![9.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/9.png)
+<img width="608" alt="9" src="https://user-images.githubusercontent.com/99728502/226582372-24059fd4-4f0d-4bab-a62c-c48fc892f47b.png">
 
 - 각각의 문맥과 쿼리 속의 단어에 대해 word embedding(GloVe)과 character embedding을 반복한 자료를 사용
     
@@ -74,7 +74,7 @@ passage에 있는 어떤 단어가 질문과 가장 관련이 있는지를 알�
 
 ### BiDAF: Attention
 
-![10.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/10.png)
+<img width="398" alt="10" src="https://user-images.githubusercontent.com/99728502/226582382-672aad33-19fe-4cdb-af27-aaacd314532e.png">
 
 - 먼저, 모든 짝 $(c_i, q_j)$에 대해 유사도 점수를 계산:
     
@@ -85,14 +85,13 @@ passage에 있는 어떤 단어가 질문과 가장 관련이 있는지를 알�
     $\alpha_{i,j} = softmax_j(S_{i,j}) \in R \ \ \ \ \ \ a_i = \sum_{j=1}^M \alpha_{i,j}q_j \in R^{2H}$
     
 
-![11.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/11.png)
+<img width="244" alt="11" src="https://user-images.githubusercontent.com/99728502/226582401-818f1cc4-48d9-4a67-b529-c24daa6e57fe.png">
 
 - query-to-context attention : 각각의 query 단어에 대해 가장 관련있는 context 단어를 하나씩 뽑음
     
     $\beta_i = softmax_i(max_{j=1}^M(S_{i,j})) \in R^N \ \ \ \ \ \ \ b_i = \sum_{i=1}^N \beta_ic_i \in R^{2H}$
     
-
-![12.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/12.png)
+<img width="457" alt="12" src="https://user-images.githubusercontent.com/99728502/226582431-4a905493-06ae-426b-a1b4-0bb9635cb52f.png">
 
 - 최종 결과는 $g_i =[c_j;a_i;c_i \odot a_i;c_i \odot b_i] \in R^{8H}$
 - Modeling Layer : context word 사이의 상호작용을 모델링
@@ -107,11 +106,11 @@ passage에 있는 어떤 단어가 질문과 가장 관련이 있는지를 알�
 
 ## Bert for reading comprehension
 
-![13.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/13.png)
+<img width="393" alt="13" src="https://user-images.githubusercontent.com/99728502/226582457-11d262ca-e499-4755-9d09-b447c8e5f3be.png">
 
 - BERT는 많은 양의 텍스트에 대해 pre-trained 된 deep한 양방향 Transformer encoder
 
-![14.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/14.png)
+<img width="226" alt="14" src="https://user-images.githubusercontent.com/99728502/226582477-83c616b7-d122-4a68-8068-a56cfd0241c5.png">
 
 - Question = Segment A
 - Passage(구절) = Segment B
@@ -126,7 +125,7 @@ passage에 있는 어떤 단어가 질문과 가장 관련이 있는지를 알�
 
 # Can we design better-pretraining objectives?
 
-![15.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/15.png)
+<img width="355" alt="15" src="https://user-images.githubusercontent.com/99728502/226582499-9e6ae03e-0906-46ad-a013-4c53ce9a7f10.png">
 
 Two ides
 
@@ -143,7 +142,7 @@ SQuAD 데이터셋에서 인간의 점수보다 이미 더 높은 점수를 기�
 
 # Open-domain Question Answering
 
-![16.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/16.png)
+<img width="345" alt="16" src="https://user-images.githubusercontent.com/99728502/226582520-f4d62652-4033-433a-9afb-3b9b0fee1bc4.png">
 
 - 주어진 질문에 관련된 구절이 따로 없고, 위키페디아 같이 많은 문서를 모아둔 곳에 있는 구절을 활용
 - 답이 어디있는지는 모르고, 하나의 open-domain 질문에 대해 답을 주는 것이 목표
@@ -156,7 +155,7 @@ SQuAD 데이터셋에서 인간의 점수보다 이미 더 높은 점수를 기�
 - Retriver : $f(𝒟, Q)$  → $P_1, ... \ , P_K$,              𝒟: large collection of documents
 - Reader : $g(Q, \left\{P_1, ...\ , P_K \right\})$ → A              A : an answer string
 
-![17.PNG](%5BCS224n%5D%20Lecture%2011%204fd32615a4074b79bda07445fb68b21a/17.png)
+<img width="412" alt="17" src="https://user-images.githubusercontent.com/99728502/226582530-4d72af19-e91f-4109-8687-6f400346e989.png">
 
 - Retriever(검색기)도 훈련할 수 있음!
     - 각각의 구절은 BERT를 사용해서 vector로 인코딩 될 수 있고, retriver score은 질문에 대한 인코딩값과(벡터) 구절에 대한 인코딩 값의 내적을 통해 계산할 수 있음
