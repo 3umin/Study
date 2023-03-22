@@ -2,7 +2,7 @@
 
 ## Computational Graph
 
-![Untitled](Lecture%204%2034b08566355b433b9b5a1fcc663c9636/Untitled.png)
+<img width="463" alt="Untitled" src="https://user-images.githubusercontent.com/99728502/226892457-745590bb-b529-4cab-ace6-4eb0b0243b04.png">
 
 - 그래프를 이용해 함수를 표현하는 방법
 - 이 방법을 이용해서 Backpropagation(역전파)를 사용 가능
@@ -10,20 +10,21 @@
 
 # Backpropagation
 
-![Untitled](Lecture%204%2034b08566355b433b9b5a1fcc663c9636/Untitled%201.png)
+<img width="497" alt="Untitled 1" src="https://user-images.githubusercontent.com/99728502/226892469-10ea7719-4858-4a06-96c0-d32b595ad765.png">
 
 - 출력 값인 f에 대한 x, y, z의 Gradient를 계산해야 함
 - 위의 경우
 ${\partial f \over \partial z} = 1 \\ {\partial f \over \partial x} = {\partial f \over \partial q} * {\partial q \over \partial x} = z = -4  \\ {\partial f \over \partial y} = {\partial f \over \partial q} * {\partial q \over \partial y} = z = -4$
 
-![Untitled](Lecture%204%2034b08566355b433b9b5a1fcc663c9636/Untitled%202.png)
+![Uploading Untitled 2.png…]()
 
 - 또 다른 예시 중 하나.
 - 위에 써진 값은 실제 값을 의미하고, 아래 써진 값은 각 변수로 f를 미분한 값을 의미
 - 실제로 Chain Rule을 사용해 미분을 진행해나가다보면 같은 결과값을 얻을 수 있음
 - Sigmoid Function의 미분식을 안다면, 파란색으로 박스쳐진 부분을 손쉽게 건너뛸 수 있음
     
-    ![Untitled](Lecture%204%2034b08566355b433b9b5a1fcc663c9636/Untitled%203.png)
+    <img width="480" alt="Untitled 3" src="https://user-images.githubusercontent.com/99728502/226892524-40f47106-491b-4557-932d-6992dac23286.png">
+
     
 
 - Backpropagation에 필요한 특징
@@ -38,8 +39,8 @@ ${\partial f \over \partial z} = 1 \\ {\partial f \over \partial x} = {\partial 
 
 - 벡터에 대해 Backpropagation 하는 예시
     
-    ![Untitled](Lecture%204%2034b08566355b433b9b5a1fcc663c9636/Untitled%204.png)
-    
+    <img width="497" alt="Untitled 4" src="https://user-images.githubusercontent.com/99728502/226892550-0c61e845-8a6a-46b3-8fdd-bdc675f2775e.png">
+
 1. *에서 L2로 가는 값은 $q_i^2$을 통해 계산되므로 Gradient는 $2q_i$의 벡터로 계산됨
 2. W에서 *로 가는 길은 $W \cdot x, \ {\partial f \over \partial W_{i, j}} = {\partial q_i \over \partial W_{i,j}} * {\partial f \over \partial q_i} = 2q_i x_j$를 통해 계산
     - 0.2 x 0.44 = 0.088
@@ -73,5 +74,5 @@ ${\partial f \over \partial z} = 1 \\ {\partial f \over \partial x} = {\partial 
 
 - 신경망은 함수들의 집합(Class), 비선형의 복잡한 함수를 위해 간단한 함수들을 계층적으로 여러개 쌓아올림
 - 다양한 Activation Function 사용
-    
-    ![Untitled](Lecture%204%2034b08566355b433b9b5a1fcc663c9636/Untitled%205.png)
+
+    <img width="485" alt="Untitled 5" src="https://user-images.githubusercontent.com/99728502/226892602-38582329-b3fe-4cfd-9d8e-e7268bf822e1.png">
