@@ -16,7 +16,7 @@
 - 위의 경우
 ${\partial f \over \partial z} = 1 \\ {\partial f \over \partial x} = {\partial f \over \partial q} * {\partial q \over \partial x} = z = -4  \\ {\partial f \over \partial y} = {\partial f \over \partial q} * {\partial q \over \partial y} = z = -4$
 
-![Uploading Untitled 2.png…]()
+<img width="493" alt="Untitled 2" src="https://user-images.githubusercontent.com/99728502/226892731-29b7158b-c7dd-415c-b0b2-dfdb4d43693c.png">
 
 - 또 다른 예시 중 하나.
 - 위에 써진 값은 실제 값을 의미하고, 아래 써진 값은 각 변수로 f를 미분한 값을 의미
