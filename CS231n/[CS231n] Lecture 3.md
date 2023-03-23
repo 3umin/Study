@@ -59,6 +59,20 @@ W를 입력으로 받아서 각 스코어를 확인하고 W가 얼마나 효과�
     - Max norm regularization
     - Dropout, Batch normalization, Stochastic depth 등등
 
+- $x = [1, 1, 1, 1]
+ \\\ w_1 = [1, 0,0,0] \\\ 
+w_2 = [0.25, 0.25,0.25,0.25] \\\ w_1^Tx = w_2^Tx = 1$ 로 계산되는 값은 동일한 상황
+    
+    하지만 여기서 L1 Regularization과 L2 Regularization의 값은 다르다.
+    
+    $R_{L1}(w_1) = \sum_k \sum_l |w_1(k, l)|  =  1 + 0 + 0 + 0 = 1 
+    \\\ R_{L1}(w_2) = \sum_k \sum_l |w_2(k, l)| = 4 * 0.25 = 1$
+    
+    $R_{L2}(w_1) = \sum_k \sum_l w^2_1(k, l)  =  1^2 + 0^2 + 0^2 + 0^2 = 1 
+    \\\ R_{L2}(w_2) = \sum_k \sum_l w_2^2(k, l) = 4 * 0.25^2 = 0.25$
+    
+    L1 규제로 보게되면 w1과 w2의 규제값 역시 같게 되어 동일한 weight 취급을 할 수 있지만, L2 규제로 보게되면 규제값이 서로 달라 둘중 더 복잡한 w1에 penalty를 부여하게 됨.
+
 # 최적화(Optimization)
 
 - loss의 최소값에 도달하기 위해 설정
