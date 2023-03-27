@@ -4,7 +4,7 @@
 
 ### Mark 1 Perceptron Machine(1957)
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled.png)
+<img width="233" alt="Untitled" src="https://user-images.githubusercontent.com/99728502/227854349-1898f1c0-6600-40e5-9878-18e5f4599283.png">
 
 - 1957년 Frank Rosenblatt가 개발
 - 퍼셉트론을 구현한 최초의 기계
@@ -12,7 +12,7 @@
 
 ### Adaline/Madaline(1960)
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%201.png)
+<img width="622" alt="Untitled 1" src="https://user-images.githubusercontent.com/99728502/227854367-9faa0856-4bce-4755-a034-d148c1a0a942.png">
 
 - Widrow and Hoff가 개발
 - 최초의 Multilayer Perceptron Network
@@ -21,7 +21,7 @@
 
 ### Backprop(1986)
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%202.png)
+<img width="612" alt="Untitled 2" src="https://user-images.githubusercontent.com/99728502/227854385-c41b1db0-7045-4144-8f67-b9414f2b1c21.png">
 
 - Rumelhart가 제안
 - Chain rule, Update rule 사용
@@ -39,23 +39,23 @@
 - 음성인식, 영상인식, ImageNet 등등에 활용
 - CNN도 이때부터 널리 활용
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%203.png)
+<img width="429" alt="Untitled 3" src="https://user-images.githubusercontent.com/99728502/227854401-354f9b4f-f33b-465a-8b34-21f096421dc0.png">
 
 - Hubel & Wiesel - 일차시각피질의 뉴런에 대한 연구
     - 피질 내 서로 인접한 세포들은 Visual Field내에 어떤 지역성을 가짐
     - 피질 내부에 지형적인 매핑이 있다는 사실을 찾아냄
         
-        ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%204.png)
-        
+        <img width="239" alt="Untitled 4" src="https://user-images.githubusercontent.com/99728502/227854422-6fc9f6f9-a087-4744-bc83-03127d895d78.png">
+
     - 뉴런들이 계층적인 구조를 이룸
         
-        ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%205.png)
-        
+        <img width="373" alt="Untitled 5" src="https://user-images.githubusercontent.com/99728502/227854440-a1654bdc-529c-4f7a-8a33-67d051c44e49.png">
+
 
 - Neocognitron(1980)
     
-    ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%206.png)
-    
+    <img width="586" alt="Untitled 6" src="https://user-images.githubusercontent.com/99728502/227854449-2917c511-b610-4fb6-8571-b979f6fa1efb.png">
+
     - Hubel과 Wiesel이 발견한 Simple/Complex cells의 아이디어를 사용한 최초의 NN
     - Simple cells는 학습 가능한 parameter을 가지고 있음
     - Compelx cells는 pooling과 같은 것으로 구현했는데 작은 변화에 Simple cells보다 좀 더 강인
@@ -63,16 +63,16 @@
 
 - Gradient-based learning applied to document recognition(1998)
     
-    ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%207.png)
-    
+    <img width="429" alt="Untitled 7" src="https://user-images.githubusercontent.com/99728502/227854474-d8f4efd3-fa04-4203-88ff-ebdb804f2c86.png">
+
     - 최초로 NN을 학습시키기 위해 Backprop과 Gradient-based learning을 적용
     - 문서인식에 아주 잘 동작
     - 특히 우편번호의 숫자를 인식하는데 아주 잘 동작 → 실제 우편번호 인식에 사용됨
 
 - AlexNet(2012)
     
-    ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%208.png)
-    
+    <img width="373" alt="Untitled 8" src="https://user-images.githubusercontent.com/99728502/227854483-30194b7c-8a6f-42e5-9ecc-1afdf754bcb1.png">
+
     - CNN의 현대화 바람
     - 이전의 CNN보다 더 크고 깊어짐
     - 가장 중요한 점은 ImageNet dataset과 같이 대규모의 데이터를 활용할 수 있음(GPU의 발전 등으로 인해)
@@ -83,14 +83,14 @@
 
 ### Fully Connected Layer(FC Layer)
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%209.png)
+<img width="593" alt="Untitled 9" src="https://user-images.githubusercontent.com/99728502/227854519-4aaa2be2-7697-4f73-ad5a-12dd7a88ee42.png">
 
 - 어떤 벡터를 가지고 연산을 하는 것
 - 예를 들어 32 x 32 x 3 사이즈의 이미지를 길게 펴서 3072차원의 벡터로 만들고, 가중치 W와 곱하여 Activation을 얻음
 
 ## Convolutional Layer
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2010.png)
+<img width="560" alt="Untitled 10" src="https://user-images.githubusercontent.com/99728502/227854530-293f9dd9-343e-49f9-9c03-4fa52858e51f.png">
 
 - Convolutional Layer은 FC Layer과 다르게 기존의 이미지 구조를 그대로 유지하게 됨
 - 작은 필터가 가중치의 역할을 하게 되고, 필터가 이미지를 슬라이딩 하면서 공간적으로 내적을 수행
@@ -100,7 +100,7 @@
 
 ### 어떻게 Sliding을 하는가?
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2011.png)
+<img width="596" alt="Untitled 11" src="https://user-images.githubusercontent.com/99728502/227854541-71042170-dbb3-4269-a88b-f81aff239224.png">
 
 - 이미지의 좌상단부터 시작
 - 필터의 모든 요소를 가지고 내적을 하게 되면 하나의 값이 나오고, Conv 연산이 수행된 값들을 Output activation map의 해당하는 위치에 저장하게 됨
@@ -112,22 +112,22 @@
     
 - Layer들은 계층적으로 학습을 진행함(저수준 특징부터 고수준 특징 순서대로)
     
-    ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2012.png)
-    
+    <img width="601" alt="Untitled 12" src="https://user-images.githubusercontent.com/99728502/227854556-fa4ce0c7-38b3-42b0-a5be-44113cf24250.png">
+
 - 필터의 예시
     
-    ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2013.png)
-    
+    <img width="601" alt="Untitled 13" src="https://user-images.githubusercontent.com/99728502/227854630-82bdfbcc-7320-42a6-af79-cd4d87e33ac2.png">
+
     - 각 activation은 이미지가 필터를 통과한 값이 되며, 이미지 중 어느 위치에서 이 필터가 크게 반응하는지를 보여줌
 
 - Convolutional 신경망을 거치면서 변하는 이미지의 예시
     
-    ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2014.png)
-    
+    <img width="629" alt="Untitled 14" src="https://user-images.githubusercontent.com/99728502/227854644-c604797b-ec93-496d-a2f1-e240a77db923.png">
+
 
 ### Spatial Dimension
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2015.png)
+<img width="443" alt="Untitled 15" src="https://user-images.githubusercontent.com/99728502/227854669-ba5307c0-59aa-4fc0-aec6-fc3e7a10aef2.png">
 
 - 좌측 상단부터 필터를 씌워 해당 값들의 내적을 수행(이 값은 activation map의 좌상단에 위치)
     - 이후 오른쪽으로 한칸을 움직여 다시 내적(stride = 1인 상태)
@@ -142,7 +142,7 @@
 
 ### Zero-pad
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2016.png)
+<img width="611" alt="Untitled 16" src="https://user-images.githubusercontent.com/99728502/227854685-77498058-008c-47d0-9f62-2fd86e0c8646.png">
 
 - 출력 사이즈를 의도대로 만들어주기 위함
 - 또한 가장자리에 있는 데이터가 잘 반영되도록 사용하기도 함
@@ -156,7 +156,7 @@
 
 ### Brain/neuron view of Conv Layer
 
-![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2017.png)
+<img width="614" alt="Untitled 17" src="https://user-images.githubusercontent.com/99728502/227854697-9755b51f-9a4a-4e23-a154-c4c376a4f3ca.png">
 
 - 이미지의 일부분이 Filter를 통과하며 1개의 숫자값이 출력됨
 - 기본적인 뉴런과 다른 점은, local connectivity가 존재한다는 점.
@@ -174,8 +174,8 @@
 
 - Max Pooling
     
-    ![Untitled](Lecture%205%20bff71cf33a474f5196df40dad86d141e/Untitled%2018.png)
-    
+    <img width="546" alt="Untitled 18" src="https://user-images.githubusercontent.com/99728502/227854713-4126415b-8218-4081-9da3-0d191f59795e.png">
+
     - 필터 크기를 지정할 수 있음
     - 여기서 필터 크기는 얼마만큼의 영역을 한 번에 묶을지를 지정
     - Conv Layer처럼 필터를 통과하며 계산하는데, Conv Layer과 다르게 내적을 하지 않고, 필터 내의 최댓값만 Output으로 출력
