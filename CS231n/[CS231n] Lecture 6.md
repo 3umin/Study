@@ -9,13 +9,13 @@
 
 # Activation Function(활성화 함수)
 
-![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled.png)
+<img width="503" alt="Untitled" src="https://user-images.githubusercontent.com/99728502/229734714-740737fd-a276-4d2c-9894-d8f0e9b1859b.png">
 
 - 데이터 입력이 들어오면 가중치와 곱한 뒤 활성화 함수를 거침
 
 ### Sigmoid
 
-![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%201.png)
+<img width="160" alt="Untitled 1" src="https://user-images.githubusercontent.com/99728502/229734762-dfe1706a-dfd0-4300-9894-db5946e65ca6.png">
 
 - $\sigma (x) = 1 / (1+e^{-x})$
 - 각 입력을 받아서 그 입력을 [0, 1] 범위의 값이 되도록 함
@@ -33,7 +33,7 @@
 
 ### Tanh
 
-![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%202.png)
+<img width="119" alt="Untitled 2" src="https://user-images.githubusercontent.com/99728502/229734799-7b01309f-edc6-447f-b981-0678c592b3d9.png">
 
 - Sigmoid와 유사하지만, 범위가 [-1, 1]
 - zero-centered 활성화 함수
@@ -41,7 +41,7 @@
 
 ### ReLU
 
-![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%203.png)
+<img width="137" alt="Untitled 3" src="https://user-images.githubusercontent.com/99728502/229734838-4aa84962-bcce-4ef6-9419-5c7269930a3c.png">
 
 - $f(x) = max(0, x)$
 - 양의 값에서는 saturate 되지 않기 때문에 gradient를 죽이지 않음
@@ -53,8 +53,8 @@
     2. 음수에서는 saturated 되어 gradient를 killing
 - 2번째 문제점 때문에, Dead ReLU 문제가 발생할 수 있음
     
-    ![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%204.png)
-    
+    <img width="382" alt="Untitled 4" src="https://user-images.githubusercontent.com/99728502/229734866-75fbb410-e39c-4b14-b5ca-2d029c4b0408.png">
+
     - 평면의 절반만 activate 되고, dead ReLU 층은 전혀 activate 되지 않아 update도 되지 않음
     - 발생하는 이유
         - 초기화를 잘못한 경우
@@ -63,7 +63,7 @@
 
 ### Leaky ReLU
 
-![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%205.png)
+<img width="144" alt="Untitled 5" src="https://user-images.githubusercontent.com/99728502/229734905-a29e97ff-26a7-4e81-988a-57ed44c2a2ad.png">
 
 - $f(x) = max(0.01x, x)$
 - 음수에서 더 이상 0이 아니게 되어 ReLU의 gradient Killing 문제를 해소
@@ -79,7 +79,7 @@
 
 ### ELU
 
-![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%206.png)
+<img width="204" alt="Untitled 6" src="https://user-images.githubusercontent.com/99728502/229734929-d44f6710-c7b3-43ad-af67-d4f4ad0212a0.png">
 
 - $f(x) = x \ \ if \ \ x > 0,\ \ f(x) = \alpha (exp(x) -1) \\ if \\ x \le 0$
 - zero-mean에 가까운 출력값
@@ -104,7 +104,7 @@
 
 ## Preprocessing(데이터 전처리)
 
-![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%207.png)
+<img width="346" alt="Untitled 7" src="https://user-images.githubusercontent.com/99728502/229735025-54f294de-ce11-43d8-ae45-bcaf7636df83.png">
 
 - zero-centered 해야하는 이유: 데이터의 부호가 항상 동일하면 모든 뉴런이 동일한 부호의 gradient update를 하기 때문
 - normalization 하는 이유 : 모든 차원이 동일한 범위에 있게 해서 동등한 기여를 하게 함
@@ -124,15 +124,15 @@
     W = 0.01 * np.random.randn(D, H)
     ```
     
-    ![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%208.png)
-    
+    <img width="276" alt="Untitled 8" src="https://user-images.githubusercontent.com/99728502/229735095-a1d7da61-d068-4b05-80fb-82f02a395bbb.png">
+
     - 작은 네트워크라면 괜찮지만, 깊은 네트워크에선 문제가 생길 수 있음
     - 깊은 네트워크에서 W를 곱하면 곱할수록 W가 너무 작은 값들이라 0으로 수렴하게 됨
     - Backprop에서도 W를 계속 곱하기 때문에, upstream gradient도 0으로 수렴하게 됨
 2. 가중치를 좀 더 큰 값으로 초기화를 한다면?
     
-    ![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%209.png)
-    
+    <img width="248" alt="Untitled 9" src="https://user-images.githubusercontent.com/99728502/229735128-fb1f7387-85da-4efc-968e-905c05c1ce0d.png">
+
     - 가중치가 큰 값을 가지므로 tanh의 출력은 항상 saturated 될 것임.
 
 → 가중치가 너무 작으면 Gradient가 사라져버리고, 너무 크면 Saturation 되는 문제가 발생한다.
@@ -143,7 +143,7 @@
 W = np.random.randn(fan_in, fan_out) / np.sqrt(fan_in)
 ```
 
-![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%2010.png)
+<img width="268" alt="Untitled 10" src="https://user-images.githubusercontent.com/99728502/229735195-df3c2d3b-04b4-4bad-a2ec-09bf8f866d11.png">
 
 - Standard Gaussian으로 뽑은 값을 입력의 수로 스케일링해줌
 - 입/출력의 분산을 맞추어지는 기능
@@ -151,16 +151,16 @@ W = np.random.randn(fan_in, fan_out) / np.sqrt(fan_in)
 - 자비에 초기화 기법은 선형 활성화 함수를 사용하는 것을 전제.
 - 만약 ReLU를 사용한다면 출력의 절반을 죽임(절반은 매번 0이 됨) → 출력의 분산을 반토막 내버림
     
-    ![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%2011.png)
-    
+    <img width="269" alt="Untitled 11" src="https://user-images.githubusercontent.com/99728502/229735226-4291f08b-9538-442c-ade4-45e7fb11a263.png">
+
     - 이 문제를 해결하기 위해선 추가적으로 2를 더 나누어줌
         
         ```python
         W = np.random.randn(fan_in, fan_out) / np.sqrt(fan_in/2)
         ```
         
-        ![Untitled](Lecture%206%20478b5554ad39489095a47461ad90d841/Untitled%2012.png)
-        
+        <img width="259" alt="Untitled 12" src="https://user-images.githubusercontent.com/99728502/229735242-42161f61-6ea5-4382-bb7d-2fac0775f760.png">
+
 
 ## Batch Normalization
 
