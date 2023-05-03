@@ -2,15 +2,15 @@
 
 - Zero centering 및 Normalization을 하는 이유 : 손실함수가 가중치의 변동에 덜 민감하게 되어 최적화하기 더 쉬움
     
-    ![Untitled](Lecture%207%20ada6d1765b204f54bd5d958b7f8373a3/Untitled.png)
-    
+    <img width="446" alt="Untitled" src="https://user-images.githubusercontent.com/99728502/235842188-62edfa47-7f7e-480c-a742-fa8d09fb4767.png">
+
 
 # Fancier Optimization
 
 - Problems with SGD
     
-    ![Untitled](Lecture%207%20ada6d1765b204f54bd5d958b7f8373a3/Untitled%201.png)
-    
+    <img width="508" alt="Untitled 1" src="https://user-images.githubusercontent.com/99728502/235842211-8ab94d2e-3ac5-46f9-ac36-97bf7060bc61.png">
+
     - 만약 한 방향으로는 Loss가 빠르게 변하는반면 다른 방향으로는 Loss가 느리게 변한다면?
         - 다시말해 Loss는 수직방향의 가중치 변화에 더 민감히 반응(수평방향보다)
         - 이 상황 속에서 SGD를 수행하면, 위의 그림과 같은 지그재그 형태를 볼 수 있음
@@ -18,7 +18,8 @@
         - 이러한 불균형 문제는 고차원 공간에서 훨씬 쉽게 일어남
     - Local Minima & Saddle point
         
-        ![Untitled](Lecture%207%20ada6d1765b204f54bd5d958b7f8373a3/Untitled%202.png)
+        <img width="224" alt="Untitled 2" src="https://user-images.githubusercontent.com/99728502/235842235-43c04b00-4c6a-4416-adcb-7582eca7782b.png">
+
         
         - 중간에 위치한 Valley에 멈춤(Locally Gradient가 0이기 때문에)
         - Saddle point는 Valley 형태는 아니지만 Gradient는 0이거나 가까운 지점. 여기서도 멈추게 됨
@@ -43,8 +44,8 @@ while True:
 - 현재 미니배치의 gradient 방향 뿐 아니라 velocity도 반영
 - 물리적으로 공이 떨어지는 것을 상상할 수 있음
     
-    ![Untitled](Lecture%207%20ada6d1765b204f54bd5d958b7f8373a3/Untitled%203.png)
-    
+    <img width="521" alt="Untitled 3" src="https://user-images.githubusercontent.com/99728502/235842244-3d2fe688-416f-4a38-ae3d-9b9d98a561c3.png">
+
     - 공은 내려올 수록 빨라짐
     - gradient가 0인 평지에 마주하게 되더라도, 공의 관성으로 인해 내려올 수 있음(Local Minima 또는 Saddle point 극복)
     - 지그재그로 움직이는 상황이라면 momentum이 이 변동을 서로 상쇄시켜 버림
@@ -52,8 +53,8 @@ while True:
     
     ### Nestrov Momentum
     
-    ![Untitled](Lecture%207%20ada6d1765b204f54bd5d958b7f8373a3/Untitled%204.png)
-    
+    <img width="440" alt="Untitled 4" src="https://user-images.githubusercontent.com/99728502/235842257-02735dad-4f59-475e-9dcb-b72f2e8c5d50.png">
+
     - SGD Momentum은 현재 지점에서의 gradient를 계산한 뒤에 velocity와 섞어줌
     - Nestrov는 우선 velocity 방향으로 움직이고, 그 지점에서의 gradient를 계산하여 둘을 합침
     - velocity의 방향이 잘못되었을 경우의 현재 gradient의 방향을 이용해 상쇄시킬 수 있도록 함
@@ -129,7 +130,7 @@ while True:
 
 ### Dropout
 
-![Untitled](Lecture%207%20ada6d1765b204f54bd5d958b7f8373a3/Untitled%205.png)
+<img width="373" alt="Untitled 5" src="https://user-images.githubusercontent.com/99728502/235842291-b6745c56-38c5-439c-9033-ca3f34b82253.png">
 
 - Forward pass 과정에서 임의로 일부 뉴런을 0으로 만드는 것
 - Forward pass를 할 때마다 0인 뉴런이 변화
