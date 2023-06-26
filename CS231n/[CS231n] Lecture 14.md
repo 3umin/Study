@@ -2,22 +2,22 @@
 
 # 강화학습(Reinforcement Learning)
 
-![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled.png)
+<img width="464" alt="Untitled" src="https://github.com/3umin/Study/assets/99728502/7d354924-4915-463a-843a-64ec2915edaa">
 
 - 에이전트에게는 State ($S_t$)가 주어지고, Action ($a_t$)를 취해서 이에 따라 Reward ($r_t$)와 다음 상태 ($S_{t+1}$)가 주어짐
 - 대표적인 사례
     - Cart-Pole Problem
         
-        ![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%201.png)
-        
+        <img width="470" alt="Untitled 1" src="https://github.com/3umin/Study/assets/99728502/fb1b3dca-1640-4d58-acff-10aad0d083c7">
+
         - 움직이는 카트와 카트위에 달려있는 막대기의 균형을 유지하는 문제
         - State : 막대기의 각도, 막대기의 각속도, 카트의 위치, 카트의 수평속도
         - Action : 카트를 수평으로 미는 힘
         - Reward : 막대기가 제대로 서있으면 1점
     - Robot Locomotion
         
-        ![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%202.png)
-        
+        <img width="503" alt="Untitled 2" src="https://github.com/3umin/Study/assets/99728502/24d11635-8316-471f-8bbb-8e3d686d6c5c">
+
         - 로봇이 앞으로 나아가도록 조종
         - State : 로봇의 모든 관절들의 각과 위치
         - Action : 관절에 적용되는 토크(힘)
@@ -35,12 +35,12 @@
 
 ## Markov Decision Process(MDP)
 
-![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%203.png)
+<img width="458" alt="Untitled 3" src="https://github.com/3umin/Study/assets/99728502/1fef6945-9f1d-448f-8575-146d5865349b">
 
 - 강화학습을 수식화
     
-    ![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%204.png)
-    
+    <img width="511" alt="Untitled 4" src="https://github.com/3umin/Study/assets/99728502/2f6564cd-3720-40f9-8277-433a3e456f77">
+
 - 초기 상태인 t=0에서, 초기상태 분포인 $p(s_0)$에서 State $s_0$를 샘플링
     1. 에이전트가 action $a_t$를 결정
     2. Environment는 어떤 분포로부터 reward를 샘플링 (reward는 현재의 s와 a가 주어졌을 때의 보상)
@@ -51,8 +51,8 @@
 
 - 간단한 MDP 예시
     
-    ![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%205.png)
-    
+    <img width="387" alt="Untitled 5" src="https://github.com/3umin/Study/assets/99728502/9b230709-dacf-44f8-ac4a-8544e2ceba99">
+
     - 격자 중 어디로든 이동할 수 있고, 상하좌우로 이동 가능
     - 한 번 움직일 때마다 음의 보상을 받으며, 목표는 회색으로 칠해진 “**종료 상태**”에 최소한의 경로로 이동
     - Random policy에서는 무작위로 방향을 결정
@@ -86,14 +86,14 @@
 
 ## Q-learning
 
-![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%206.png)
+<img width="422" alt="Untitled 6" src="https://github.com/3umin/Study/assets/99728502/ce15fe48-6296-47a6-a251-c3dbde99e509">
 
 - action-value function을 근사(딥러닝 네트워크로)
 - Neural Network로 근사시킨 Q-function을 학습시켜서 Bellman Equation의 에러를 최소화하면 됨
 - $L_i(\theta_i) = E_{s, a \sim p(\cdot)} [(y_i - Q(s, a;\theta_i))^2],y _i = E_{s' \sim \epsilon}[r + \gamma max_{a'} Q(s', a';\theta_{i-1}|s, a]$
 - Forward Pass에서는 손실함수를 계산하고, Backward Pass는 계산한 손실을 기반으로 파라미터 $\theta$를 업데이트
 
-![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%207.png)
+<img width="377" alt="Untitled 7" src="https://github.com/3umin/Study/assets/99728502/96683c84-3aaf-46fb-80b1-a57b944d10d2">
 
 - Q-function에 사용한 네트워크 구조
     - 상태 S를 입력으로 받아 Q-value function을 직접 예측하는 것이 목표
@@ -109,7 +109,7 @@
     - 즉 연속적인 샘플을 이용하지 않고 전이 테이블에서 임의로 샘플링된 샘플을 사용
     - Replay memory에서의 미니배치를 이용해 Q-network를 학습시키면 위 문제들을 해결할 수 있다
 
-![Experience Replay를 이용한 Deep Q-learning 알고리즘](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%208.png)
+<img width="524" alt="Untitled 8" src="https://github.com/3umin/Study/assets/99728502/30bb28ea-80e8-4357-9473-528378afcc9c">
 
 Experience Replay를 이용한 Deep Q-learning 알고리즘
 
@@ -121,11 +121,11 @@ Experience Replay를 이용한 Deep Q-learning 알고리즘
 
 ### Policy Gradients
 
-![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%209.png)
+<img width="341" alt="Untitled 9" src="https://github.com/3umin/Study/assets/99728502/852d6673-6749-4f8a-87b0-c101e6ce5034">
 
 - 이 상황에서 보상의 기댓값을 최대로 하는 정책 파라미터를 찾으면 됨 → policy parameter에 gradient ascent 수행!
-    
-    ![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%2010.png)
+    <img width="524" alt="Untitled 10" src="https://github.com/3umin/Study/assets/99728502/d581e4cf-345a-412f-a2b5-6a4e91c1f6d1">
+
     
 - Reinforce algorithm에 적용하면, $J(\theta) = E_{r\sim p(\tau;\theta)} [r(\tau)] = \int_{\tau} r(\tau) p(\tau ;\theta)d\tau$
 - $r(\tau)$  : 각 경로에 따른 보상
@@ -133,8 +133,8 @@ Experience Replay를 이용한 Deep Q-learning 알고리즘
 - 기댓값에 대한 그레디언트를 계산하는 대신 그레디언트에 대한 기댓값을 계산 → Monte Carlo 샘플링
 - 이 방법을 통해 어떤 경로 $\tau$에 대해서도 Gradient를 기반으로 $J(\theta)$를 추정해낼 수 있다
     
-    ![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%2011.png)
-    
+    <img width="491" alt="Untitled 11" src="https://github.com/3umin/Study/assets/99728502/342c90b6-4af1-408d-808b-cc8ccf8c598c">
+
 - 구체적인 Q-Value를 몰라도 policy 자체의 gradient를 구해 최적의 policy를 찾을 수 있음
 - Reward 측정기 J는 $\tau$가 높을 경우에 관찰된 행동의 확률을 높이고, $\tau$가 낮을 경우에는 관찰된 행동의 확률을 낮출 것임(즉 잘한 행동의 발생 확률은 높이고 못한 행동의 발생 확률은 낮출 것이다)
 - 궤적(경로)이 좋을 경우에는 그 모든 action들이 좋았다고 평가받을 것처럼 보이지만 기댓값에 의해서, 그것은 평균화 되어버린다.
@@ -146,8 +146,9 @@ Experience Replay를 이용한 Deep Q-learning 알고리즘
         - 결국 좋은 평가를 위해서는 충분한 샘플링밖에 답이 없다!
 
 - Variance reduction 방법들
-    
-    ![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%2012.png)
+  
+    <img width="458" alt="Untitled 12" src="https://github.com/3umin/Study/assets/99728502/90a62cc1-f674-4c2e-8c8b-2e413d671f84">
+
     
     1. 해당 State로부터 받을 미래의 보상만을 고려하여 어떤 Action을 취할 확률을 키워줌
         - Gradient를 계산하기 위해 reward를 계속 곱한 값을 더해주는데, 미래의 보상만 고려하니까 이 값이 작아짐 → Gradient도 작아짐 —> Variance 작아짐
@@ -167,14 +168,14 @@ Experience Replay를 이용한 Deep Q-learning 알고리즘
 
 ### Recurrent Attention Model(RAM)
 
-![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%2013.png)
+<img width="495" alt="Untitled 13" src="https://github.com/3umin/Study/assets/99728502/66eba422-704e-41b4-89f8-63d77a1e4020">
 
 - 이미지를 분류할 때 일련의 glimpses만 가지고 예측해야함
 - 이미지의 어떤 부분을 볼지를 학습하는 모델
 - 이 방법을 통해 연산을 줄일 수 있고, 중요한 부분만을 선별할 수 있기 때문에 실제로 성능이 더 올라갈 수도 있다
     
-    ![Untitled](Lecture%2014%2071eeb99cc25b49c895b631b1e39930a0/Untitled%2014.png)
-    
+    <img width="522" alt="Untitled 14" src="https://github.com/3umin/Study/assets/99728502/5ed03d46-475c-4519-bb50-aee2cc07aac0">
+
 - glimpses를 NN에 통과시키고 난 뒤, RNN을 이용해 지금까지 있었던 glimpses(state)를 전부 결합
 - 이 행동 분포로부터 x, y를 샘플링 한 다음에 이 좌표를 이용해 다음 glimpse의 좌표를 구함
 
