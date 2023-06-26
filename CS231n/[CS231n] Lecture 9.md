@@ -2,7 +2,7 @@
 
 ## AlexNet
 
-![Untitled](Lecture%209%20e59cf911e0fa4b71b1f7bba495ef654c/Untitled.png)
+<img width="532" alt="Untitled" src="https://github.com/3umin/Study/assets/99728502/92851255-3416-46bc-a851-6f39eacfcd6b">
 
 - 최초의 Large scale CNN, 2012 Imagenet Challenge 우승 모델
 - Conv - Pool - normalization 층이 반복
@@ -61,32 +61,33 @@
 
 ### What is Inception module?
 
-![Untitled](Lecture%209%20e59cf911e0fa4b71b1f7bba495ef654c/Untitled%201.png)
+<img width="260" alt="Untitled 1" src="https://github.com/3umin/Study/assets/99728502/51493ba1-de62-40c3-908e-8ba2f8e700a8">
 
 - “network within a network” 라는 개념으로 local topology를 구현했고 이를 쌓아올림
 - 동일한 입력에 대해 서로 다른 다양한 필터들이 병렬로 존재
 - 다양한 필터에서 출력된 다양한 출력을 모두 Depth 방향으로 합치는 방식 → 이 방법은 계산복잡성 문제가 있을 수 있음.
-    
-    ![Untitled](Lecture%209%20e59cf911e0fa4b71b1f7bba495ef654c/Untitled%202.png)
+  
+    <img width="276" alt="Untitled 2" src="https://github.com/3umin/Study/assets/99728502/cfc4519a-2168-446b-a50c-5520829239cc">
+
     
     - zero padding으로 필터들간의 spatial dimension을 맞춘 예제
     - 이 경우 무려 spatial dimension은 변하지 않았지만 depth가 많이 늘었고, 연산 수도 무려 854M개가 존재
 
 - 이러한 문제를 어떻게 해결하나?
     
-    ![Untitled](Lecture%209%20e59cf911e0fa4b71b1f7bba495ef654c/Untitled%203.png)
-    
+    <img width="429" alt="Untitled 3" src="https://github.com/3umin/Study/assets/99728502/856b265d-d330-4b34-a8d0-fdda40bd0ff2">
+
     - bottleneck layer을 사용
     - Conv 연산 이전에 bottleneck layer을 통해 입력을 더 낮은 차원으로 보냄
     - 1 x 1 사이즈의 Conv 층을 통해 spatial size는 유지하면서, depth를 더 낮은 차원으로 투영
         
-        ![Untitled](Lecture%209%20e59cf911e0fa4b71b1f7bba495ef654c/Untitled%204.png)
-        
+        <img width="519" alt="Untitled 4" src="https://github.com/3umin/Study/assets/99728502/a82a785f-7c0d-4f2f-8973-f028cd876cf4">
+
     - 입력의 차원을 줄여서 연산횟수를 854M회에서 358M회로 줄일 수 있었음
     - GoogleNet은 이러한 Inception module들을 쌓아올려 구성
         
-        ![Untitled](Lecture%209%20e59cf911e0fa4b71b1f7bba495ef654c/Untitled%205.png)
-        
+        <img width="492" alt="Untitled 5" src="https://github.com/3umin/Study/assets/99728502/7b27f925-c896-4a0d-b26d-d04d7a2751d4">
+
     - 네트워크의 끝 뿐 아니라 따로 삐져나온 저 두 곳에서도 Loss를 계산함(네트워크가 깊기 때문에 보조분류기를 중간에 달아주어 중간 레이어의 학습을 도울 수 있다)
     - 중간에 달려있는 보조분류기의 Loss 값을 바탕으로 해당 영역의 Gradient를 업데이트(최종 classifier의 loss로 처음까지 오면 Gradient가 0이 되어서 제대로 업데이트 불가..)
 
@@ -113,7 +114,7 @@
         
         - 더 얕은 모델의 가중치를 깊은 모델의 일부 레이어에 복사해 최소한 얕은 모델만큼의 성능은 나와야할 것이다.
 
-![Untitled](Lecture%209%20e59cf911e0fa4b71b1f7bba495ef654c/Untitled%206.png)
+<img width="184" alt="Untitled 6" src="https://github.com/3umin/Study/assets/99728502/3d65075b-768c-440e-9de6-5bfb2f87e851">
 
 - 위의 원리를 활용하기 위해, 레이어를 단순하게 쌓지 않고 Residual mapping을 하도록 블럭을 생성
     - 오른쪽의 Skip Connection은 가중치 없이 입력을 그대로 출력단으로 내보냄
@@ -137,8 +138,8 @@
 
 - ResNeXt
     
-    ![Untitled](Lecture%209%20e59cf911e0fa4b71b1f7bba495ef654c/Untitled%207.png)
-    
+    <img width="343" alt="Untitled 7" src="https://github.com/3umin/Study/assets/99728502/638a597b-6974-4d79-95f1-d3d402fa5dac">
+
     - Residual Block을 여러개의 Block으로 구성
     - 여러 Layer을 병렬로 연결
     - Resnet + Inception
